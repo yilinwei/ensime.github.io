@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 WARNING="This file was generated using gen_manual.sh. Do not manually edit!"
 MODIFIED_DATE=`date "+%m/%d/%Y"`
-PROTOCOL_SOURCE="../src/main/scala/org/ensime/protocol/SwankProtocol.scala"
-CONFIG_SOURCE="../src/main/scala/org/ensime/config/ProjectConfig.scala"
+SERVER_SOURCE="../../ensime-server"
+PROTOCOL_SOURCE="$SERVER_SOURCE/src/main/scala/org/ensime/protocol/SwankProtocol.scala"
+CONFIG_SOURCE="$SERVER_SOURCE/src/main/scala/org/ensime/config/ProjectConfig.scala"
 PROTOCOL_DATA_DOCS=`python gen_protocol_docs.py data $PROTOCOL_SOURCE`
 PROTOCOL_RPC_DOCS=`python gen_protocol_docs.py rpc $PROTOCOL_SOURCE`
 PROTOCOL_EVENTS_DOCS=`python gen_protocol_docs.py events $PROTOCOL_SOURCE`
@@ -23,37 +24,11 @@ m4 --define=NO_MANUAL_EDIT_WARNING="$WARNING" \
 echo "Wrote updated manual.ltx"
 
 echo "Converting manual to html.."
-TMP_TARGET="/tmp/ensime_manual.html"
+HTML_TARGET="../index.html"
 pdflatex manual.ltx
-cat manual_head.html > $TMP_TARGET
-tth -r -u -e2 -Lmanual < manual.ltx >> $TMP_TARGET
-cat manual_tail.html >> $TMP_TARGET
 
-ORIGIN="git@github.com:ensime/ensime-src.git"
-PAGES_BRANCH="gh-pages"
+cat manual_head.html > $HTML_TARGET
+tth -r -u -e2 -Lmanual < manual.ltx >> $HTML_TARGET
+cat manual_tail.html >> $HTML_TARGET
 
-rm -rf $PAGES_BRANCH
-mkdir $PAGES_BRANCH
-
-echo "Getting latest $PAGES_BRANCH"
-cd $PAGES_BRANCH
-git init
-git remote add -t $PAGES_BRANCH -f origin $ORIGIN
-git checkout $PAGES_BRANCH
-cd ..
-
-echo "Copying content to $PAGES_BRANCH"
-cp $TMP_TARGET $PAGES_BRANCH/index.html
-cp wire_protocol.png $PAGES_BRANCH
-cp manual.pdf $PAGES_BRANCH
-
-echo "Committing modifications..."
-cd $PAGES_BRANCH
-git add .
-git commit -a -m "gen_manual.sh: Add latest changes."
-git push origin gh-pages
-cd ..
-rm -rf $PAGES_BRANCH
-
-
-
+mv manual.pdf ..

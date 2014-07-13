@@ -286,12 +286,12 @@ ENSIME uses the Scalariform library to format Scala sources. Type \emph{C-c C-v 
 
 \subsection{Semantic Highlighting}
 
-Normally syntax highlighting is based on the \emph{syntactic} aspects of the source code. Semantic Highlighting adds color-coding based on semantic properties of the source. For example: a syntax highlighter can't tell whether a given identifier is a var or a val or a method call. Semantic Highlighting on the other hand can color vars differently to warn of their mutability. 
+Normally syntax highlighting is based on the \emph{syntactic} aspects of the source code. Semantic Highlighting adds color-coding based on semantic properties of the source. For example: a syntax highlighter can't tell whether a given identifier is a var or a val or a method call. Semantic Highlighting on the other hand can color vars differently to warn of their mutability.
 
 
-Semantic Highlighting is \emph{disabled} by default. People use a wide variety of color schemes in Emacs; it would have been difficult to arrive at coloring scheme that worked well for everyone. 
+Semantic Highlighting is enabled by default. To disable it, set the customization variable \emph{ensime-sem-high-enabled-p} to \emph{nil}. When Semantic Highlighting is enabled, colors are refreshed every time you save the file.
 
-Enabling Semantic Highlighting is as simple as changing the value of the variable ensime-sem-high-faces, which stores a list of (symbolType . face) associations. A ``face'' can be a reference to an existing Emacs face, such as font-lock-keyword-face, or a list of the form (:foreground ``color''), where ``color'' is either a standard Emacs color (such as ``slate gray'') or a hex value like ``\#ff0000''. For example, you might add the following to your .emacs file:
+To customize Semantic Highlighting, change the value of the variable ensime-sem-high-faces, which stores a list of (symbolType . face) associations. A ``face'' can be a reference to an existing Emacs face, such as font-lock-keyword-face, or a list of the form (:foreground ``color''), where ``color'' is either a standard Emacs color (such as ``slate gray'') or a hex value like ``\#ff0000''. For example, you might add the following to your .emacs file:
 \begin{mylisting}
 \begin{verbatim}
 (setq ensime-sem-high-faces
@@ -309,8 +309,8 @@ Enabling Semantic Highlighting is as simple as changing the value of the variabl
    ))
 \end{verbatim}
 \end{mylisting}
-Once the value of ensime-sem-high-faces has changed, the next time you save a file, the designated symbol types will be highlighted.
-By the way, the symbol types in the example above are all that are currently supported. 
+... or edit it using {\bf M-x customize-variable RET ensime-sem-high-faces}.
+By the way, the symbol types in the example above are all that are currently supported.
 
 \subsection{Scaladoc and Javadoc Browsing (customizing)}
 
