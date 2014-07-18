@@ -98,7 +98,7 @@
 
 <div class="p"><!----></div>
  
-<div style="text-align:center"><b>Last Updated</b>: 06/21/2014
+<div style="text-align:center"><b>Last Updated</b>: 07/12/2014
 </div>
 
 <div class="p"><!----></div>
@@ -1162,13 +1162,13 @@ ENSIME uses the Scalariform library to format Scala sources. Type <em>C-c C-v f<
 4.11&nbsp;&nbsp;Semantic Highlighting</h3>
 
 <div class="p"><!----></div>
-Normally syntax highlighting is based on the <em>syntactic</em> aspects of the source code. Semantic Highlighting adds color-coding based on semantic properties of the source. For example: a syntax highlighter can't tell whether a given identifier is a var or a val or a method call. Semantic Highlighting on the other hand can color vars differently to warn of their mutability. 
+Normally syntax highlighting is based on the <em>syntactic</em> aspects of the source code. Semantic Highlighting adds color-coding based on semantic properties of the source. For example: a syntax highlighter can't tell whether a given identifier is a var or a val or a method call. Semantic Highlighting on the other hand can color vars differently to warn of their mutability.
 
 <div class="p"><!----></div>
-Semantic Highlighting is <em>disabled</em> by default. People use a wide variety of color schemes in Emacs; it would have been difficult to arrive at coloring scheme that worked well for everyone. 
+Semantic Highlighting is enabled by default. To disable it, set the customization variable <em>ensime-sem-high-enabled-p</em> to <em>nil</em>. When Semantic Highlighting is enabled, colors are refreshed every time you save the file.
 
 <div class="p"><!----></div>
-Enabling Semantic Highlighting is as simple as changing the value of the variable ensime-sem-high-faces, which stores a list of (symbolType . face) associations. A `face' can be a reference to an existing Emacs face, such as font-lock-keyword-face, or a list of the form (:foreground `color'), where `color' is either a standard Emacs color (such as `slate gray') or a hex value like `#ff0000'. For example, you might add the following to your .emacs file:
+To customize Semantic Highlighting, change the value of the variable ensime-sem-high-faces, which stores a list of (symbolType . face) associations. A `face' can be a reference to an existing Emacs face, such as font-lock-keyword-face, or a list of the form (:foreground `color'), where `color' is either a standard Emacs color (such as `slate gray') or a hex value like `#ff0000'. For example, you might add the following to your .emacs file:
 
 <dl>
 
@@ -1192,8 +1192,8 @@ Enabling Semantic Highlighting is as simple as changing the value of the variabl
 </pre>
 </b></dd>
 </dl>
-Once the value of ensime-sem-high-faces has changed, the next time you save a file, the designated symbol types will be highlighted.
-By the way, the symbol types in the example above are all that are currently supported. 
+... or edit it using <b>M-x customize-variable RET ensime-sem-high-faces</b>.
+By the way, the symbol types in the example above are all that are currently supported.
 
 <div class="p"><!----></div>
      <a name="tth_sEc4.12"></a><h3>
@@ -1669,7 +1669,7 @@ C.3.1&nbsp;&nbsp;Protocol Change Log</h4>
 &nbsp;&nbsp;Completions&nbsp;now&nbsp;takes&nbsp;a&nbsp;'reload'&nbsp;argument.
 0.8
 &nbsp;&nbsp;Add&nbsp;RPC&nbsp;calls&nbsp;for&nbsp;debugging
-&nbsp;&nbsp;Protocol&nbsp;is&nbsp;now&nbsp;explicitely&nbsp;UTF-8
+&nbsp;&nbsp;Protocol&nbsp;is&nbsp;now&nbsp;explicitly&nbsp;UTF-8
 0.7.4
 &nbsp;&nbsp;Add&nbsp;optional&nbsp;'owner-type-id'&nbsp;key&nbsp;to&nbsp;SymbolInfo
 &nbsp;&nbsp;Add&nbsp;optional&nbsp;'case-sens'&nbsp;option&nbsp;to&nbsp;swank:completions&nbsp;call
@@ -2619,190 +2619,6 @@ Get information necessary to launch a scala repl for this project.<br /><br />
 
 <pre>
 (:return&nbsp;(:ok&nbsp;(:classpath&nbsp;"lib1.jar:lib2.jar:lib3.jar"))&nbsp;42)
-
-</pre>
-</b></dd>
-</dl>
-</div></blockquote>
-<br />
-
-<div class="p"><!----></div>
-<b>swank:builder-init</b>
-<br />
-
-<blockquote><div>
-Initialize the incremental builder and kick off a full rebuild.<br /><br />
-<b>Arguments:</b>
- None<br /><br />
-<b>Return:</b>
- None<br /><br />
-<b>Example Call:</b>
-
-<dl>
-
-	<dd><b>
-
-<pre>
-(:swank-rpc&nbsp;(swank:builder-init)&nbsp;42)
-
-</pre>
-</b></dd>
-</dl>
-<b>Example Return:</b>
-
-<dl>
-
-	<dd><b>
-
-<pre>
-(:return&nbsp;(:ok&nbsp;())&nbsp;42)
-
-</pre>
-</b></dd>
-</dl>
-</div></blockquote>
-<br />
-
-<div class="p"><!----></div>
-<b>swank:builder-update-files</b>
-<br />
-
-<blockquote><div>
-Signal to the incremental builder that the given files
-have changed and must be rebuilt. Triggers rebuild.<br /><br />
-<b>Arguments:</b>
-
-<dl>
-
-	<dd><b>
-
-<pre>
-List&nbsp;of&nbsp;Strings:Filenames,&nbsp;absolute&nbsp;or&nbsp;relative&nbsp;to&nbsp;the&nbsp;project&nbsp;root.
-
-</pre>
-</b></dd>
-</dl>
-<b>Return:</b>
- None<br /><br />
-<b>Example Call:</b>
-
-<dl>
-
-	<dd><b>
-
-<pre>
-(:swank-rpc&nbsp;(swank:builder-update-files
-("/ensime/src/main/scala/org/ensime/server/Analyzer.scala"))&nbsp;42)
-
-</pre>
-</b></dd>
-</dl>
-<b>Example Return:</b>
-
-<dl>
-
-	<dd><b>
-
-<pre>
-(:return&nbsp;(:ok&nbsp;())&nbsp;42)
-
-</pre>
-</b></dd>
-</dl>
-</div></blockquote>
-<br />
-
-<div class="p"><!----></div>
-<b>swank:builder-add-files</b>
-<br />
-
-<blockquote><div>
-Signal to the incremental builder that the given files
-should be added to the build. Triggers rebuild.<br /><br />
-<b>Arguments:</b>
-
-<dl>
-
-	<dd><b>
-
-<pre>
-List&nbsp;of&nbsp;Strings:Filenames,&nbsp;absolute&nbsp;or&nbsp;relative&nbsp;to&nbsp;the&nbsp;project&nbsp;root.
-
-</pre>
-</b></dd>
-</dl>
-<b>Return:</b>
- None<br /><br />
-<b>Example Call:</b>
-
-<dl>
-
-	<dd><b>
-
-<pre>
-(:swank-rpc&nbsp;(swank:builder-add-files
-("/ensime/src/main/scala/org/ensime/server/Analyzer.scala"))&nbsp;42)
-
-</pre>
-</b></dd>
-</dl>
-<b>Example Return:</b>
-
-<dl>
-
-	<dd><b>
-
-<pre>
-(:return&nbsp;(:ok&nbsp;())&nbsp;42)
-
-</pre>
-</b></dd>
-</dl>
-</div></blockquote>
-<br />
-
-<div class="p"><!----></div>
-<b>swank:builder-remove-files</b>
-<br />
-
-<blockquote><div>
-Signal to the incremental builder that the given files
-should be removed from the build. Triggers rebuild.<br /><br />
-<b>Arguments:</b>
-
-<dl>
-
-	<dd><b>
-
-<pre>
-List&nbsp;of&nbsp;Strings:Filenames,&nbsp;absolute&nbsp;or&nbsp;relative&nbsp;to&nbsp;the&nbsp;project&nbsp;root.
-
-</pre>
-</b></dd>
-</dl>
-<b>Return:</b>
- None<br /><br />
-<b>Example Call:</b>
-
-<dl>
-
-	<dd><b>
-
-<pre>
-(:swank-rpc&nbsp;(swank:builder-remove-files
-("/ensime/src/main/scala/org/ensime/server/Analyzer.scala"))&nbsp;42)
-
-</pre>
-</b></dd>
-</dl>
-<b>Example Return:</b>
-
-<dl>
-
-	<dd><b>
-
-<pre>
-(:return&nbsp;(:ok&nbsp;())&nbsp;42)
 
 </pre>
 </b></dd>
