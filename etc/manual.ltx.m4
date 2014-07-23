@@ -146,8 +146,8 @@ ENSIME includes a wizard for automatically generating configuration files. In Em
 The keystrokes \emph{C-c C-v s} will launch (or switch to an existing) inferior sbt session.\\
 
 \noindent
-\textbf{Compile-on-Save}:\\
-If the value of the Emacs-Lisp variablt ensime-sbt-compile-on-save is non-nil ENSIME will invoke the 'compile' task in the inferior sbt process(presuming you have one running) whenever you save a Scala buffer. This option is enabled by default.\\
+\textbf{Perform-on-Save}:\\
+The Emacs-Lisp variable ensime-sbt-perform-on-save names the sbt task to invoke in the inferior sbt process (presuming you have one running) whenever you save a Scala buffer. If it is nil, no task will be performed. The default value is 'compile'.\\
 
 
 \subsubsection{Other}
