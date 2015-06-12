@@ -1,0 +1,3 @@
+[submodule "talks/scaladays15/reveal.js"]
+	path = talks/scaladays15/reveal.js
+	url = git@github.com:hakimel/reveal.js.git
