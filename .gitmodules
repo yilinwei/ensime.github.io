@@ -1,3 +1,4 @@
 [submodule "talks/scaladays15/reveal.js"]
 	path = talks/scaladays15/reveal.js
-	url = git@github.com:hakimel/reveal.js.git
+	url = https://github.com/hakimel/reveal.js
+        ignore = dirty
