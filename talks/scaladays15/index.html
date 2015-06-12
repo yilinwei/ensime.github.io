@@ -199,7 +199,7 @@ Your browser does not support the video tag.
 </section></section>
 <section><section class="titleslide slide level1"><h1>Architecture<span class="tag" data-tag-name="SAM"></span></h1></section><section class="slide level2">
 
-<p><img src="file:images/architecture.png" alt="" /></p>
+<p><img src="images/architecture.png" alt="" /></p>
 <aside class="notes">
 <p>This is an architectural overview of the internals of the ensime-server, which is bounded here by the dotted lines.</p>
 <p>The text editor communicates with the server via SWANK, which is a bidirectional TCP/IP sockets protocol using S-Expressions as the language. This is really convenient for emacs. We’ll talk about protocols later because we really don’t see ENSIME as being an emacs only library.</p>
@@ -219,7 +219,7 @@ Your browser does not support the video tag.
 </section></section>
 <section><section class="titleslide slide level1"><h1>Ecosystem<span class="tag" data-tag-name="SAM"></span></h1></section><section class="slide level2">
 <h1>Projects</h1>
-<p><img src="file:images/projects.png" alt="" /></p>
+<p><img src="images/projects.png" alt="" /></p>
 <aside class="notes">
 <p>ENSIME isn’t just one project. The server is a Scala project with separate branches to support the three active stable release versions of Scala. (Yes, people are still using Scala 2.9 in production systems).</p>
 <p>The compiler API has been quite volatile across versions, so we are not able to offer a single source build. The server jars are published as snapshots to Sonatype, more about that in a few slides.</p>
@@ -432,7 +432,7 @@ Your browser does not support the video tag.
 </blockquote>
 </section><section class="slide level2">
 <h1>S-Expressions</h1>
-<p><img src="file:images/sexp.png" alt="" /></p>
+<p><img src="images/sexp.png" alt="" /></p>
 <aside class="notes">
 <p>Let’s talk about lisp for a little bit, or more specifically, S-Expressions.</p>
 <p>For the emacs users among you, this is second nature.</p>
@@ -440,7 +440,7 @@ Your browser does not support the video tag.
 </aside>
 </section><section class="slide level2">
 
-<p><img src="file:images/sexp-list.png" alt="" /></p>
+<p><img src="images/sexp-list.png" alt="" /></p>
 <div class="sourceCode"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp">(a . (b . (c . <span class="kw">nil</span>)))
 
 (a b c) <span class="co">;; list syntax</span></code></pre></div>
