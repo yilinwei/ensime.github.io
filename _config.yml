@@ -9,11 +9,11 @@ version: all
 output: web
 destination: ../doc_outputs/mydoc/designers
 topnav_title: ENSIME - ENhanced Scala Interaction Mode for text Editors
-homepage_title: ENSIME - ENhanced Scala Interaction Mode for text Editors
-site_title: ENSIME - ENhanced Scala Interaction Mode for text Editors
+homepage_title: ENSIME
+site_title: ENSIME
 project_folder: mydoc
 company_name: ENSIME
-footer_image_location: ../common_images/company_logo.png
+footer_image_location: ../common_images/ensime_logo_old.png
 github_editme_path: ensime/ensime.github.io/edit/master
 # variables
 
