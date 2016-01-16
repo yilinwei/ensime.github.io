@@ -19,4 +19,4 @@ ENhanced Scala Interaction Mode for text Editors:
 
 To use ENSIME, you need a text editor and a build tool that supports ENSIME.
 
-ENSIME is a member of [Typelevel.scala](http://typelevel.org/) and is governed by our [Code of Conduct](http://typelevel.org/about).
+ENSIME is a member of [Typelevel.scala](http://typelevel.org/) and is governed by a [Code of Conduct](http://typelevel.org/conduct.html).
