@@ -1,3 +1,7 @@
-## Jekyll Documentation theme
+The ENSIME consolidated documentation.
 
-This is the readme page of the Jekyll documentation theme.
+To run / test locally, install [jekyll](http://jekyllrb.com/docs/installation/) and then type:
+
+```
+jekyll build ; jekyll serve
+```
