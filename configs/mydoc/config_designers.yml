@@ -1,3 +1,5 @@
+# This is duplicated here from configs/mydoc/config_designers.yml so that Github Pages can read it. Github Pages requires this file for the build process. It can't read a configuration file stored in another location.
+
 # project definitions
 project: mydoc_designers
 audience: designers
@@ -12,12 +14,11 @@ site_title: Jekyll theme for designers
 project_folder: mydoc
 company_name: Your company
 footer_image_location: ../common_images/company_logo.png
-github_editme_path: tomjohnson1492/documentation-theme-jekyll/edit/reviews
-disqus_shortname: idrbwjekyll
+github_editme_path: ensime/ensime.github.io/edit/reviews
 # variables
 
 sidebar_tagline: Designers
-sidebar_version: Version 4.0
+#sidebar_version: Version 4.0
 theme_file: theme-blue.css
 pdf_file_name: mydoc_designers_pdf.pdf
 
