@@ -8,8 +8,8 @@ platform: all
 version: all
 output: web
 destination: ../doc_outputs/mydoc/designers
-topnav_title:
-homepage_title: ENSIME
+topnav_title: ENSIME
+homepage_title:
 site_title: ENSIME
 project_folder: mydoc
 company_name: ENSIME
