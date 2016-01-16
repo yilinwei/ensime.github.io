@@ -44,24 +44,9 @@ entries:
       version: all
       output: web, pdf
 
-    - title: About the theme author
-      url: /mydoc/mydoc_about.html
-      audience: writers, designers
-      platform: all
-      product: all
-      version: all
-      output: web
-
-    - title: Support
-      url: /mydoc/mydoc_support.html
-      audience: writers, designers
-      platform: all
-      product: all
-      version: all
-      output: web
-
   - title: Getting started
     audience: writers, designers
+    url: /mydoc/mydoc_getting_started.html
     platform: all
     product: all
     version: all
@@ -290,29 +275,6 @@ entries:
 
     - title: Tables
       url: /mydoc/mydoc_tables.html
-      audience: writers, designers
-      platform: all
-      product: all
-      version: all
-      output: web, pdf
-
-    - title: Syntax highlighting
-      url: /mydoc/mydoc_syntax_highlighting.html
-      audience: writers, designers
-      platform: all
-      product: all
-      version: all
-      output: web, pdf
-
-  - title: Handling reviews
-    audience: writers, designers
-    platform: all
-    product: all
-    version: all
-    output: web, pdf
-    items:
-    - title: Commenting on files
-      url: /mydoc/mydoc_commenting_on_files.html
       audience: writers, designers
       platform: all
       product: all
