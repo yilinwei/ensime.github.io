@@ -3,8 +3,6 @@ layout: homepage
 title: Home
 ---
 
-ENhanced Scala Interaction Mode for text Editors:
-
 - Show the `type` of the symbol under the cursor.
 - Contextual completion for `var`s, `val`s and `def`s.
 - Semantic highlighting with `implicit` expansion.
