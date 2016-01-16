@@ -17,7 +17,7 @@ footer_image_location: ../common_images/ensime_logo_old.png
 github_editme_path: ensime/ensime.github.io/edit/master
 # variables
 
-sidebar_tagline: Designers
+sidebar_tagline:
 #sidebar_version: Version 4.0
 theme_file: theme-blue.css
 pdf_file_name: mydoc_designers_pdf.pdf
@@ -32,7 +32,6 @@ exclude:
 
 # same for all
 host: 127.0.0.1
-feedback_email: tomjohnson1492@gmail.com
 
 markdown: redcarpet
 
