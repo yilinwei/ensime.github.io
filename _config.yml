@@ -8,7 +8,7 @@ platform: all
 version: all
 output: web
 destination: ../doc_outputs/mydoc/designers
-topnav_title: ENSIME - ENhanced Scala Interaction Mode for text Editors
+topnav_title:
 homepage_title: ENSIME
 site_title: ENSIME
 project_folder: mydoc
