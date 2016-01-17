@@ -15,9 +15,13 @@
       {% assign pages_list = site.pages | sort:"order" %}
       {% for node in pages_list %}
         {% if node.title != null %}
-          {% if (node.layout == "page" && node.parent == null) %}
-            parent = {{node.parent}}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+          {% if node.layout == "page" %}
+            <!-- Liquid has minimal support for logic https://github.com/Shopify/liquid/wiki/Liquid-for-Designers -->
+            <!-- FIXME: not working -->
+            {% unless node.path.contains "/" %}
+              parent = {{node.path}}
+              <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+            {% endunless %}
           {% endif %}
         {% endif %}
       {% endfor %}
