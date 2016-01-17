@@ -10,40 +10,25 @@
     </div>
 
     <nav class="sidebar-nav">
-      <!--
-          this whole section is very hacky and I'm sure an experienced
-          ruby / jekyll dev would make it all much more dynamic
-        -->
 
+      <!-- FIXME https://github.com/ensime/ensime.github.io/issues/16 -->
       {% assign pages_list = site.pages | sort:"order" %}
       {% for node in pages_list %}
         {% if node.title != null %}
-          {% if node.layout == "page" %}
+          {% if (node.layout == "page" && node.parent == null) %}
+            parent = {{node.parent}}
             <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
           {% endif %}
         {% endif %}
       {% endfor %}
-
-      Supported Editors
-      <ul>
-      {% for node in site.editors %}
-        <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a></li>
-      {% endfor %}
-      </ul>
-
-      Supported Builds
-      <ul>
-      {% for node in site.build_tools %}
-        <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a></li>
-      {% endfor %}
-      </ul>
 
     </nav>
 
     <p class="legal">
       &copy; 2015 - {{ site.time | date: '%Y' }}
       <a href="https://github.com/ensime/ensime.github.io/graphs/contributors">ENSIME Contributors</a><br/>
-      Website License: <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a><br/>
+      Content Licence: <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a><br/>
+      Theme Licence: <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a><br/>
       <!--Theme: <a href="https://github.com/poole/hyde">Hyde</a><br/>-->
       Code of Conduct: <a href="http://typelevel.org/conduct.html">Typelevel</a>
     </p>

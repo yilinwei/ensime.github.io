@@ -10,9 +10,3 @@ relative_permalinks: true
 title:            ENSIME
 description:      'ENhanced Scala and java Interaction Mode for text Editors'
 baseurl:          /
-
-collections:
-  editors:
-    output: true
-  build_tools:
-    output: true
