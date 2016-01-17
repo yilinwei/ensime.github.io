@@ -10,12 +10,12 @@
     </div>
 
     <nav class="sidebar-nav">
-      {% comment %}
-        The code below dynamically generates a sidebar nav of pages with
-        `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
+      <!--
+          this whole section is very hacky and I'm sure an experienced
+          ruby / jekyll dev would make it all much more dynamic
+        -->
 
-      {% assign pages_list = site.pages %}
+      {% assign pages_list = site.pages | sort:"order" %}
       {% for node in pages_list %}
         {% if node.title != null %}
           {% if node.layout == "page" %}
@@ -23,12 +23,27 @@
           {% endif %}
         {% endif %}
       {% endfor %}
+
+      Editors
+      <ul>
+      {% for node in site.editors %}
+        <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a></li>
+      {% endfor %}
+      </ul>
+
+      Build Tools
+      <ul>
+      {% for node in site.build_tools %}
+        <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a></li>
+      {% endfor %}
+      </ul>
+
     </nav>
 
     <p>
       &copy; 2015 - {{ site.time | date: '%Y' }}
       <a href="https://github.com/ensime/ensime.github.io/network/members">ENSIME Authors</a><br/>
-      License: <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a><br/>
+      Website License: <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a><br/>
       <!--Theme: <a href="https://github.com/poole/hyde">Hyde</a><br/>-->
       Code of Conduct: <a href="http://typelevel.org/conduct.html">Typelevel</a>
     </p>

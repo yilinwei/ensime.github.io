@@ -1,5 +1,6 @@
 ---
 layout: homepage
+order: 2
 title: Home
 ---
 
@@ -12,6 +13,4 @@ title: Home
 - Refactorings (rename, organise imports, extract method).
 - Errors and warnings in your code: *red squigglies*.
 
-To use ENSIME, you need a text editor and a build tool that supports ENSIME.
-
-ENSIME is a member of [Typelevel.scala](http://typelevel.org/) and is governed by a [Code of Conduct](http://typelevel.org/conduct.html).
+To use ENSIME, you need a text editor and a build tool that supports ENSIME, we have a section for [Getting Started](getting_started) if you're new.
