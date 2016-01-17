@@ -1,7 +1,7 @@
 #!/bin/bash
 
 INPUT=scaladays-ensime.org
-TALK=scaladays-ensime-talk.html
+TALK=index.html
 NOTES=scaladays-ensime-notes.html
 
 echo "creating $TALK"
@@ -10,6 +10,7 @@ pandoc --standalone \
        --write=revealjs \
        --incremental \
        --slide-level=2 \
+       --variable revealjs-url:http://lab.hakim.se/reveal-js/ \
        --variable theme:sky \
        --variable width:1024 \
        --variable height:768 \

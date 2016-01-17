@@ -1,4 +1,0 @@
-[submodule "talks/scaladays15/reveal.js"]
-	path = talks/scaladays15/reveal.js
-	url = https://github.com/hakimel/reveal.js
-        ignore = dirty
