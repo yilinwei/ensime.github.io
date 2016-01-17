@@ -126,6 +126,9 @@ ul, ol, dl {
 .legal {
   font-size: small;
 }
+.nav ul {
+  margin-bottom: 0;
+}
 
 dt {
   font-weight: bold;
