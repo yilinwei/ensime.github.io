@@ -1,7 +1,7 @@
 ---
 layout: subpage
 section: /editors/emacs/
-order: 3
+order: 4
 title: Editing
 ---
 
