@@ -24,14 +24,14 @@
         {% endif %}
       {% endfor %}
 
-      Editors
+      Supported Editors
       <ul>
       {% for node in site.editors %}
         <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a></li>
       {% endfor %}
       </ul>
 
-      Build Tools
+      Supported Builds
       <ul>
       {% for node in site.build_tools %}
         <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a></li>
@@ -40,7 +40,7 @@
 
     </nav>
 
-    <p>
+    <p class="legal">
       &copy; 2015 - {{ site.time | date: '%Y' }}
       <a href="https://github.com/ensime/ensime.github.io/network/members">ENSIME Authors</a><br/>
       Website License: <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a><br/>

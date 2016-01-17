@@ -123,6 +123,9 @@ ul, ol, dl {
 .sidebar-nav ul {
   margin-bottom: 0;
 }
+.legal {
+  font-size: small;
+}
 
 dt {
   font-weight: bold;
