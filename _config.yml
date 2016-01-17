@@ -15,7 +15,7 @@ title:            ENSIME
 description:      'ENhanced Scala and java Interaction Mode for text Editors'
 baseurl:          /
 
-exclude: [talks]
+#exclude: [talks]
 
 gems:
   - jekyll-sitemap
