@@ -126,7 +126,7 @@ ul, ol, dl {
 .legal {
   font-size: small;
 }
-.nav ul {
+ul ul {
   margin-bottom: 0;
 }
 
