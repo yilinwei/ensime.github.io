@@ -5,6 +5,9 @@ order: 2
 title: SBT
 ---
 
+- TOC
+{:toc}
+
 This [sbt](http://github.com/sbt/sbt) plugin generates a `.ensime` file and provides various convenience commands for interacting with [ENSIME](http://github.com/ensime/ensime-server).
 
 ## Install
