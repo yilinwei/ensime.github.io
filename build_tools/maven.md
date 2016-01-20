@@ -15,7 +15,7 @@ This [maven](https://maven.apache.org/) plugin generates a `.ensime` file for us
 
 Configure your `~/.m2/settings.xml` file so that maven is aware of the plugin group `org.ensime.maven.plugins`:
 
-``` xml
+```xml
   <pluginGroups>
     <pluginGroup>org.ensime.maven.plugins</pluginGroup>
   </pluginGroups>
@@ -27,7 +27,7 @@ Configure your `~/.m2/settings.xml` file so that maven is aware of the plugin gr
 
 The ensime-maven plugin will tell ensime about the location of source jars, but won't automatically download them for you. You can get maven to do this by running:
 
-``` shell
+```
 mvn dependency:sources
 ```
 
@@ -35,7 +35,7 @@ mvn dependency:sources
 
 To actually generate the `.ensime` file from your pom, run:
 
-``` shell
+```
 mvn ensime:generate
 ```
 
@@ -43,6 +43,6 @@ mvn ensime:generate
 
 To prevent some surprises when working with a new project in ensime, do a full compile before starting up ensime for the first time:
 
-``` shell
+```
 mvn compile test-compile
 ```
