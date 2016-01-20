@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+gem 'jekyll', '2.4.0'
+gem 'github-pages', '43'
+gem 'kramdown', '1.9.0'
+gem 'rouge', '1.10.1'

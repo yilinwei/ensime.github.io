@@ -16,6 +16,7 @@ description:      'ENhanced Scala and java Interaction Mode for text Editors'
 baseurl:          /
 
 #exclude: [talks]
+exclude: [bundle-vendor]
 
 gems:
   - jekyll-sitemap
