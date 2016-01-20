@@ -1,0 +1,12 @@
+# Use Travis' Docker infrastructure
+sudo: false
+
+language: ruby
+rvm: 2.0.0
+
+# Override to force using .bundle/config
+install:
+- bundle install
+
+script:
+- bundle exec jekyll build
