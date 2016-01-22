@@ -5,45 +5,51 @@ order: 6
 title: Gradle
 ---
 
-This plugin will create .ensime configuration files for projects using the [`java`](https://docs.gradle.org/current/userguide/java_plugin.html), [`scala`](https://docs.gradle.org/current/userguide/scala_plugin.html) or [`gradle-android-scala-plugin`](https://github.com/saturday06/gradle-android-scala-plugin)
+This [Gradle](https://gradle.org) plugin will create .ensime configuration files for projects using the [`java`](https://docs.gradle.org/current/userguide/java_plugin.html), [`scala`](https://docs.gradle.org/current/userguide/scala_plugin.html) or [`gradle-android-scala-plugin`](https://github.com/saturday06/gradle-android-scala-plugin) plugins for use with an [ENSIME server](https://github.com/ensime/ensime-server)
 
-A working android example can be found [here](https://github.com/rolandtritsch/scala-android-ui-samples).
+Note that this does not support the new [software model](https://docs.gradle.org/current/userguide/pt06.html) configuration or the [Play Framework](https://playframework.com) [plugin](https://docs.gradle.org/current/userguide/play_plugin.html).  Yet.
 
-Note that this does not yet support the new 'software model' configuration.  Yet. 
+The source for this plugin is found in its own GitHub project [ensime/ensime-gradle](https://github.com/ensime/ensime-gradle)
 
 ### Using the plugin in your build
 
 For gradle 2.1+ 
 
-    plugins {
-      id 'org.ensime.gradle' version '0.2.2'
-    }
+```groovy
+plugins {
+  id 'org.ensime.gradle' version '0.2.2'
+}
+```
 
 For older versions:
 
-    buildscript { 
-      repositories { 
-        jcenter()
-      }
+```groovy
+buildscript { 
+  repositories { 
+    jcenter()
+  }
 
-      dependencies {
-        classpath 'net.coacoas.gradle:ensime-gradle:0.2.2'
-      }
-    }
+  dependencies {
+    classpath 'net.coacoas.gradle:ensime-gradle:0.2.2'
+  }
+}
+```
 
 To use SNAPSHOT builds, 
 
-    buildscript { 
-      repositories { 
-        maven { 
-          url 'https://oss.jfrog.org/oss-snapshot-local'
-        }
-      }
-
-      dependencies {
-        classpath 'net.coacoas.gradle:ensime-gradle:0.2.3-SNAPSHOT'
-      }
+```groovy
+buildscript { 
+  repositories { 
+    maven { 
+      url 'https://oss.jfrog.org/oss-snapshot-local'
     }
+  }
+
+  dependencies {
+    classpath 'net.coacoas.gradle:ensime-gradle:0.2.3-SNAPSHOT'
+  }
+}
+```
 
 ### Configuring ENSIME
 
@@ -57,14 +63,15 @@ should be used to indicate these options.
 
 Example:
 
-    ensime {
-      scalaVersion 2.11.7
-      javaHome     System.properites['JAVA_HOME']
-      cacheDir     file('.ensime.cache.d')
+```groovy
+ensime {
+  scalaVersion   '2.11.7'
+  cacheDir       file('.ensime.cache.d')
 
-      javaFlags      '-Xlint', '-wahoowa'
-      compilerArgs   '-Xlint'
-    } 
+  javaFlags      '-Xlint', '-wahoowa'
+  compilerArgs   '-Xlint'
+}
+```
 
 #### Formatting Preferences
 
@@ -74,22 +81,24 @@ will be added to the .ensime file as a formatting option.
 
 Example:
 
-    ensime { 
-      formattingPrefs { 
-        indentSpaces   4
-        indentWithTabs false
-      }
-    }
+```groovy
+ensime { 
+  formattingPrefs { 
+    indentSpaces   4
+    indentWithTabs false
+  }
+}
+```
 
 ### Running the task
 
 The plugin adds the 'ensime' task to the project to create a .ensime file in the project directory.
 
-    ./gradlew ensime
+```bash
+./gradlew ensime
+```
 
 Each time the task is executed, the .ensime file will be regenerated.
-
-To see the plugin in action you can also clone this repo and then run `gradle build` to build the plugin and then `cd src/test/sample/scala` and run `gradle clean build ensime`.
 
 ## Requirements
 
