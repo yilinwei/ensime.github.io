@@ -15,7 +15,7 @@ relative_permalinks: true
 
 # Setup
 title:            ENSIME
-description:      'ENhanced Scala and java Interaction Mode for text Editors'
+description:      '<b>EN</b>hanced <b>S</b>cala and java <b>I</b>nteraction <b>M</b>ode for text <b>E</b>ditors'
 baseurl:          /
 
 #exclude: [talks]
