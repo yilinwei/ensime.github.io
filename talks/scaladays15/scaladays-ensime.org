@@ -1,11 +1,9 @@
 #+TITLE: ENSIME
 #+AUTHOR: Rory Graves and Sam Halliday
-#+DATE: Scala Days 2015
+#+DATE: [[https://www.parleys.com/tutorial/ensime-why-would-anybody-build-another-scala-ide][Video from Scala Days 2015]]
 
 #+TAGS: SAM RORY
 #+TODO: TODO | RESEARCH | NOTES | CHART | DIAGRAM | DRAWING | CODE | VIDEO
-
-* [[https://www.parleys.com/tutorial/ensime-why-would-anybody-build-another-scala-ide][Video from Scala Days 2015]]
 
 * Introduction
 
