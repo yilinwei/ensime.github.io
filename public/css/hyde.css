@@ -75,11 +75,16 @@ html {
   color: #fff;
 }
 
+@font-face {
+	font-family: futurama;
+	src: url('futurama.ttf');
+}
+
 /* About section */
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
-  font-family: "Abril Fatface", serif;
+  font-family: futurama;
   font-size: 3.25rem;
 }
 
