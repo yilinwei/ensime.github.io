@@ -3,11 +3,6 @@ layout: default
 ---
 
 <div class="page">
-  <!-- Poor man's breadcrumbs... -->
-  <a href="{{ page.section }}">{{ page.section }}</a><br/><br/>
-  <a href="https://github.com/ensime/ensime.github.io/edit/master/{{ page.path }}">[edit]</a>
-  <br/><br/>
-
   <h1 class="page-title">{{ page.title }} </h1>
 
   {{ content }}
@@ -43,5 +38,7 @@ layout: default
     please say hi at <a href="https://github.com/ensime/ensime.github.io/issues/16">issue #16</a>.
   </small>
   </div>
+
+  <a href="https://github.com/ensime/ensime.github.io/edit/master/{{ page.path }}">[edit]</a>
 
 </div>
