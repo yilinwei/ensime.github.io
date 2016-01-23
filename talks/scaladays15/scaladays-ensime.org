@@ -5,6 +5,8 @@
 #+TAGS: SAM RORY
 #+TODO: TODO | RESEARCH | NOTES | CHART | DIAGRAM | DRAWING | CODE | VIDEO
 
+* [[https://www.parleys.com/tutorial/ensime-why-would-anybody-build-another-scala-ide][Video from Scala Days 2015]]
+
 * Introduction
 
 #+BEGIN_NOTES
@@ -199,7 +201,7 @@ Your browser does not support the video tag.
 #+END_SRC
 
 #+RESULTS:
-[[file:images/architecture.png]]
+[[images/architecture.png]]
 
 
 #+BEGIN_NOTES
@@ -287,7 +289,7 @@ build systems and we want to support that.
 #+END_SRC
 
 #+RESULTS:
-[[file:images/projects.png]]
+[[images/projects.png]]
 
 
 #+BEGIN_NOTES
@@ -531,7 +533,7 @@ one as emerged as the victor. But it is worth noting that...
         +------/ +------/ +------/
 #+END_SRC
 #+RESULTS:
-[[file:images/sexp.png]]
+[[images/sexp.png]]
 
 #+BEGIN_NOTES
 Let's talk about lisp for a little bit, or more specifically,
@@ -563,7 +565,7 @@ notation with a dot to separate the two parts.
 #+END_SRC
 
 #+RESULTS:
-[[file:images/sexp-list.png]]
+[[images/sexp-list.png]]
 
 #+BEGIN_SRC emacs-lisp
 (a . (b . (c . nil)))
