@@ -88,6 +88,10 @@ html {
   font-size: 3.25rem;
 }
 
+.sidebar-about b {
+  font-family: futurama;
+}
+
 /* Sidebar nav */
 .sidebar-nav {
   margin-bottom: 1rem;
