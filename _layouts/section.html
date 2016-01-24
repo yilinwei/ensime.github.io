@@ -6,7 +6,12 @@ layout: default
   <h1 class="page-title">{{ page.title }} </h1>
   {{ content }}
 
+  <br/><br/>
+  <a href="https://github.com/ensime/ensime.github.io/edit/master/{{ page.path }}">[edit]</a>
+
   <!-- WORKAROUND https://github.com/ensime/ensime.github.io/issues/16 -->
+  <hr/>
+  <div class="nav">
   <h2>Navigation</h2>
   <ul>
   {% assign pages_list = site.pages | sort:"order" %}
@@ -22,7 +27,6 @@ layout: default
     We know our navigation is terrible. If you can help us fix it,
     please say hi at <a href="https://github.com/ensime/ensime.github.io/issues/16">issue #16</a>.
   </small>
+  </div>
 
-  <br/><br/>
-  <a href="https://github.com/ensime/ensime.github.io/edit/master/{{ page.path }}">[edit]</a>
 </div>
