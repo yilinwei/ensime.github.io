@@ -1,17 +1,8 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
-    <img src="{{ site.baseurl }}public/ensime-emacs-logo-clean-shadow.svg" style="width:100%;"/>
-    <div class="sidebar-about">
-      <h1>
-        <a href="{{ site.baseurl }}">
-          {{ site.title }}
-        </a>
-      </h1>
-      <p class="lead">{{ site.description }}</p>
-    </div>
-
+    <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}public/ensime-logo-shadow.svg" style="width:100%;"/></a>
     <nav class="sidebar-nav">
-
+      
       <!-- FIXME https://github.com/ensime/ensime.github.io/issues/16 -->
       <!-- NOTE: minimal support for logic https://github.com/Shopify/liquid/wiki/Liquid-for-Designers -->
       {% assign pages_list = site.pages | sort:"order" %}
