@@ -75,23 +75,6 @@ html {
   color: #fff;
 }
 
-@font-face {
-	font-family: futurama;
-	src: url('futurama.ttf');
-}
-
-/* About section */
-.sidebar-about h1 {
-  color: #fff;
-  margin-top: 0;
-  font-family: futurama;
-  font-size: 3.25rem;
-}
-
-/* .sidebar-about b { */
-/*   font-family: futurama; */
-/* } */
-
 /* Sidebar nav */
 .sidebar-nav {
   margin-bottom: 1rem;
