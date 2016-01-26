@@ -1,6 +1,12 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
+    {% assign f14 = page.url | truncate: 14, '' %}
+    {% if f14 == "/editors/emacs" %}
+    <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}public/ensime-emacs-logo.svg" style="width:100%;"/></a>
+    {% else %}
     <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}public/ensime-logo.svg" style="width:100%;"/></a>
+    {% endif %}
+
     <nav class="sidebar-nav">
       
       <!-- FIXME https://github.com/ensime/ensime.github.io/issues/16 -->
