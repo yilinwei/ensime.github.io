@@ -8,7 +8,7 @@ We're also working around some limitations in the Liquid language constructs.
 What follows is horrible. Sorry!
 {% endcomment %}
 
-{% assign site_pages      = site.pages | order:'order' %}
+{% assign site_pages      = site.pages | sort:'order' %}
 {% assign current_page    = include.page %}
 {% assign current_section = current_page.url | remove_first:'/' | split:'/' | first %}
 
