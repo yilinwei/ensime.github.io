@@ -1,6 +1,5 @@
 ---
-layout: subpage
-section: /editors/atom/
+layout: section
 order: 3
 title: Documenting Atom Ensime
 ---

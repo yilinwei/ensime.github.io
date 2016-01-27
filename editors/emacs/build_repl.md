@@ -1,6 +1,5 @@
 ---
-layout: subpage
-section: /editors/emacs/
+layout: section
 order: 7
 title: Build and REPL
 ---

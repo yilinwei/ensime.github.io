@@ -1,6 +1,5 @@
 ---
-layout: subpage
-section: /editors/
+layout: section
 order: 7
 title: Sublime
 ---

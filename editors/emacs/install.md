@@ -1,6 +1,5 @@
 ---
-layout: subpage
-section: /editors/emacs/
+layout: section
 order: 2
 title: Installation
 ---
