@@ -2,6 +2,7 @@
 layout: page
 order: 1
 title: Getting Started
+site_nav_entry: true # this is an entry in the main site nav
 ---
 
 Fantastic, and welcome!

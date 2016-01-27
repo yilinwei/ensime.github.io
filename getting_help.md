@@ -2,6 +2,7 @@
 layout: page
 order: 5
 title: Getting Help
+site_nav_entry: true # this is an entry in the main site nav
 ---
 
 Please make sure to read the [Troubleshooting Guide](/editors/emacs/troubleshooting/) first (TODO: very emacs specific, generalise).
