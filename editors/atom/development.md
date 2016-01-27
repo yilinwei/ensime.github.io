@@ -1,6 +1,5 @@
 ---
-layout: subpage
-section: /editors/atom/
+layout: section
 order: 2
 title: Hacking on Atom Ensime
 ---

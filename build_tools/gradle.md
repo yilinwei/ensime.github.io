@@ -1,6 +1,5 @@
 ---
-layout: subpage
-section: /build_tools/
+layout: section
 order: 6
 title: Gradle
 ---
