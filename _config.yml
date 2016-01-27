@@ -1,9 +1,9 @@
 # Dependencies
-markdown:         redcarpet
-highlighter:      pygments
 
-redcarpet:
-  extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "with_toc_data", "fenced_code_blocks"]
+# We use kramdown for TOC generation.
+# See http://www.seanbuscay.com/blog/jekyll-toc-markdown for details:
+markdown:         kramdown
+highlighter:      pygments
 
 kramdown:
   input: GFM
