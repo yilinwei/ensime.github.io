@@ -12,7 +12,6 @@ What follows is horrible. Sorry!
 {% assign current_page    = include.page %}
 {% assign current_section = current_page.url | remove_first:'/' | split:'/' | first %}
 
-<ul>
 {% for node in site_pages %}
   {% assign test_depth   = 1 %}
   {% assign node_depth   = node.url | split:'/' | size | minus:1 %}
@@ -20,10 +19,9 @@ What follows is horrible. Sorry!
 
   {% if node.site_nav_entry %}
     {% if node_section == current_section %}
-      <li><a class="sidebar-nav-item active" href="{{ node.url }}">{{ node.title }}</a></li>
+      <a class="sidebar-nav-item active" href="{{ node.url }}">{{ node.title }}</a>
     {% else %}
-      <li><a class="sidebar-nav-item" href="{{ node.url }}">{{ node.title }}</a></li>
+      <a class="sidebar-nav-item" href="{{ node.url }}">{{ node.title }}</a>
     {% endif %}
   {% endif %}
 {% endfor %}
-</ul>
