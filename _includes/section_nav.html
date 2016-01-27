@@ -25,7 +25,7 @@ For example, URL containment is a substring check, not a shared prefix check.
 Might cause a bug in the future. Might not. Who knows?
 {% endcomment %}
 
-{% assign site_pages       = site.pages | order:'order' %}
+{% assign site_pages       = site.pages | sort:'order' %}
 {% assign current_page     = include.page %}
 {% assign current_section1 = current_page.url | replace:'/':' ' | truncatewords:1 %}
 {% assign current_section2 = current_page.url | replace:'/':' ' | truncatewords:2 %}
