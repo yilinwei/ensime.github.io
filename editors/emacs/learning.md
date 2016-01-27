@@ -26,52 +26,52 @@ Inside your `~/.emacs.d/init.el` file, you can type `C-h v` over any variable (i
 
 The following is intended to set some built-in Emacs variables that often confuse / annoy new users and is by no means a fully functional development environment.
 
-```lisp
-  ;; global variables
-  (setq
-   inhibit-startup-screen t
-   create-lockfiles nil
-   make-backup-files nil
-   column-number-mode t
-   scroll-error-top-bottom t
-   show-paren-delay 0.5
-   source-directory (getenv "EMACS_SOURCE")
-   sentence-end-double-space nil)
+```elisp
+;; global variables
+(setq
+ inhibit-startup-screen t
+ create-lockfiles nil
+ make-backup-files nil
+ column-number-mode t
+ scroll-error-top-bottom t
+ show-paren-delay 0.5
+ source-directory (getenv "EMACS_SOURCE")
+ sentence-end-double-space nil)
 
-  ;; buffer local variables
-  (setq-default
-   indent-tabs-mode nil
-   tab-width 4
-   c-basic-offset 4)
+;; buffer local variables
+(setq-default
+ indent-tabs-mode nil
+ tab-width 4
+ c-basic-offset 4)
 
-  ;; modes
-  (electric-indent-mode 0)
+;; modes
+(electric-indent-mode 0)
 
-  ;; global keybindings
-  (global-unset-key (kbd "C-z"))
+;; global keybindings
+(global-unset-key (kbd "C-z"))
 
-  ;; this sets you up with the package manager
-  (require 'package)
-  (setq
-   use-package-always-ensure t
-   package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                      ("org" . "http://orgmode.org/elpa/")
-                      ("melpa" . "http://melpa.org/packages/")))
+;; this sets you up with the package manager
+(require 'package)
+(setq
+ use-package-always-ensure t
+ package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                    ("org" . "http://orgmode.org/elpa/")
+                    ("melpa" . "http://melpa.org/packages/")))
 
-  (package-initialize)
-  (when (not package-archive-contents)
-    (package-refresh-contents)
-    (package-install 'use-package))
-  (require 'use-package)
+(package-initialize)
+(when (not package-archive-contents)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(require 'use-package)
 ```
 
 Consider using [use-package](https://github.com/jwiegley/use-package) to manage your configuration, e.g.
 
-```lisp
-  (use-package projectile
-    :demand
-    :init   (setq projectile-use-git-grep t)
-    :config (projectile-global-mode t)
-    :bind   (("s-f" . projectile-find-file)
-             ("s-F" . projectile-grep)))
+```elisp
+(use-package projectile
+  :demand
+  :init   (setq projectile-use-git-grep t)
+  :config (projectile-global-mode t)
+  :bind   (("s-f" . projectile-find-file)
+           ("s-F" . projectile-grep)))
 ```
