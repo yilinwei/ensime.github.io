@@ -1,7 +1,7 @@
 ---
 layout: section
 order: 1
-title: Installing Atom Ensime
+title: Installation
 ---
 
 ## Prerequisites

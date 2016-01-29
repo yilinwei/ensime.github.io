@@ -1,7 +1,7 @@
 ---
 layout: section
 order: 2
-title: Hacking on Atom Ensime
+title: Developing
 ---
 
 ## Working with the Atom Ensime Source
@@ -27,7 +27,7 @@ title: Hacking on Atom Ensime
 - https://github.com/lukehoban/atom-ide-flow/
 - https://github.com/atom/atom/blob/master/src/text-editor-component.coffee#L365
 - https://github.com/TypeStrong/atom-typescript/
-- https://github.com/chaika2013/ide-haskell/
+- https://github.com/atom-haskell/ide-haskell
 
 ## Useful Links
 
