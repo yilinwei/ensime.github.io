@@ -1,7 +1,7 @@
 ---
 layout: section
 order: 3
-title: Documenting Atom Ensime
+title: Documenting
 ---
 
 ## Improving this documentation
