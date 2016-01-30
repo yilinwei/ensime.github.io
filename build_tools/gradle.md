@@ -17,7 +17,7 @@ For gradle 2.1+
 
 ```groovy
 plugins {
-  id 'org.ensime.gradle' version '0.2.2'
+  id 'org.ensime.gradle' version '0.2.3'
 }
 ```
 
@@ -30,7 +30,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'net.coacoas.gradle:ensime-gradle:0.2.2'
+    classpath 'net.coacoas.gradle:ensime-gradle:0.2.3'
   }
 }
 ```
