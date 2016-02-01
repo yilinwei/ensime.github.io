@@ -3,7 +3,6 @@
 # We use kramdown for TOC generation.
 # See http://www.seanbuscay.com/blog/jekyll-toc-markdown for details:
 markdown:         kramdown
-highlighter:      pygments
 
 kramdown:
   input: GFM
