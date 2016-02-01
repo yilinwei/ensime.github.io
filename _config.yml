@@ -10,7 +10,6 @@ kramdown:
 
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
 
 # Setup
 title:            ENSIME
