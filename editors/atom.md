@@ -4,13 +4,13 @@ order: 2
 title: Atom
 ---
 
-![Atom Ensime screengrab](img/atom-screenshot.png)
+![Atom ENSIME screengrab](img/atom-screenshot.png)
 
 [![Join the chat at https://gitter.im/ensime/ensime-atom](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ensime/ensime-atom?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [Atom] is a free and open source editor for OS X, Windows, and Linux.
 
-The Ensime integration is a work in progress currently featuring:
+The ENSIME integration is a work in progress currently featuring:
 
 - Jump to definition
 - Hover for type information
@@ -20,6 +20,7 @@ The Ensime integration is a work in progress currently featuring:
 - Mark applied implicits
 - Show applied implicits
 - Go to type
+- Go to documentation
 - Organize imports
 
 ## Get Started
