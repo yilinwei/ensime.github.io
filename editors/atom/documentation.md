@@ -4,6 +4,10 @@ order: 3
 title: Documenting
 ---
 
+## Recent changes
+
+See the [release notes at GitHub](https://github.com/ensime/ensime-atom/releases/) (since 0.33.0).
+
 ## Improving this documentation
 
 - Fork: https://github.com/ensime/ensime.github.io
