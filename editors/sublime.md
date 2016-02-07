@@ -4,6 +4,8 @@ order: 7
 title: Sublime Text 3
 ---
 
+![ENSIME Sublime screengrab](img/sublime-screenshot.png)
+
 [![Join our Gitter chat][gitter-badge]][gitter]
 
 [Sublime Text][sublime] is a sophisticated commercially available text editor for OS X, Linux, and Windows.
