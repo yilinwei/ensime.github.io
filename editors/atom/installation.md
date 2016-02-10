@@ -45,6 +45,7 @@ The following are automatically installed by Atom ENSIME:
 - [language-scala] for syntax highlighting.
 - [hyperclick] for code navigation. ENSIME hooks in as provider.
 - [browser-plus] to display ScalaDoc.
+- [linter] for display of errors and warnings.
 
 
 These are recommended:
