@@ -15,4 +15,21 @@ The general architecture looks like this:
 The server API is documented in [org/ensime/api](https://github.com/ensime/ensime-server/tree/master/api/src/main/scala/org/ensime/api)
 with example JSON payloads in [org/ensime/jerk](https://github.com/ensime/ensime-server/blob/master/jerk/src/test/scala/org/ensime/jerk/JerkFormatsSpec.scala)
 
+##Compiling `ensime-server`
+
+**Notice**: Please make sure to install [sbt-extras](https://github.com/paulp/sbt-extras), otherwise project compilation might fail with a `java.lang.OutOfMemoryError` or `java.lang.StackOverflowError`.
+
+Before you start, run this SBT command on your `ensime-server` repository:
+```
+sbt gen-ensime
+```
+
+You will use the following commands to compile the server, tests and integration tests:
+
+```
+sbt compile
+sbt test:compile
+sbt it:compile
+```
+
 TODO: needs a lot more info
