@@ -8,6 +8,23 @@ title: Troubleshooting
 
 Things go wrong -- we know! Here are some of the main gotchas. If these tips don't solve your problem, [ask on Gitter][gitter] and check the [issue tracker][issues] to see if others have had the same problem.
 
+## Manually Specifying the Location of SBT
+
+If Ensime can't find SBT on your PATH, you can hard-code the location in the preferences for the Sublime Text Ensime package:
+
+- On OS X, choose *Sublime Text Menu / Preferences / Package Settings / Ensime / Settings - User*
+- On Windows and Linux, choose *Preferences Menu / Package Settings / Ensime / Settings - User*
+
+The configuration file will be empty when you open it. Add the path to your SBT executable as follows:
+
+~~~json
+{
+  "sbt_binary": "/path/to/sbt"
+}
+~~~
+
+After that you should be able to run the *Ensime: Startup* command from the Command Palette. If it doesn't work immediately, try restarting Sublime Text.
+
 ## Checking Java and SBT Visiblity
 
 Unsure whether Sublime Text can see Java and SBT on your system application path? Try pasting the following commands one at a time into the Sublime Text console (*View menu / Show Console*).

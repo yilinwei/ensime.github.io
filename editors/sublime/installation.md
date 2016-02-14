@@ -34,9 +34,11 @@ Once you have [a `.ensime` file][gen-ensime] for your project, start an ENSIME s
 
 2. Choose *"Ensime: Startup"* from the Sublime Text command palette (*Tools Menu / Command Palette...*).
 
-   If this menu item doesn't appear, check *No Commands in the Command Palette?* in the [Troubleshooting](#troubleshooting) section below.
+   If this menu item doesn't appear, check *No Commands in the Command Palette?* in the [Troubleshooting][troubleshooting] section.
 
 3. The first time you start ENSIME it will take a few minutes to download dependencies and get set up (it'll be much faster on subsequent runs).
+
+   If you get an error message saying Ensime can't find SBT on your PATH, you can manually specify the location in your preferences. Check the [Troubleshooting][troubleshooting] section for details.
 
    *TODO: How do you tell when it's initialised?*
 
