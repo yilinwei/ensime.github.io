@@ -19,6 +19,6 @@ Most tickets can be resolved easily by following a simple process.
 
 If that solved your problem, great!
 
-If not, please join the conversation on the `gitter.im` room [ensime-atom](https://gitter.im/ensime/ensime-atom). You will benefit by pre-emptively following the steps outlined in the [bug report template](https://github.com/ensime/ensime-atom/blob/master/ISSUE_TEMPLATE.md).
+If not, please join the conversation on the `gitter.im` room [ensime-atom](https://gitter.im/ensime/ensime-atom). You will benefit by pre-emptively following the steps outlined in the [bug report template](https://github.com/ensime/ensime-atom/blob/master/.github/ISSUE_TEMPLATE.md).
 
 If you think you've found a bug you can file it at [https://github.com/ensime/ensime-atom/issues/new](https://github.com/ensime/ensime-atom/issues/new) (you'd don't need to ask on the channel, just go right ahead and create a ticket).

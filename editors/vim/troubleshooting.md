@@ -21,6 +21,6 @@ Most tickets can be resolved easily by following a simple process.
 
 If that solved your problem, great!
 
-If not, please join the conversation on the `gitter.im` room [ensime-vim](https://gitter.im/ensime/ensime-vim). You will benefit by pre-emptively following the steps outlined in the [bug report template](https://github.com/ensime/ensime-vim/blob/master/ISSUE_TEMPLATE.md)
+If not, please join the conversation on the `gitter.im` room [ensime-vim](https://gitter.im/ensime/ensime-vim). You will benefit by pre-emptively following the steps outlined in the [bug report template](https://github.com/ensime/ensime-vim/blob/master/.github/ISSUE_TEMPLATE.md)
 
 If you think you've found a bug you can file it at [https://github.com/ensime/ensime-vim/issues/new](https://github.com/ensime/ensime-vim/issues/new) (you'd don't need to ask on the channel, just go right ahead and create a ticket).
