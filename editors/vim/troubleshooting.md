@@ -10,6 +10,7 @@ Thank you for using ENSIME on Vim!
 
 Most tickets can be resolved easily by following a simple process.
 
+0. fully compile your project
 1. nuke old versions of the ENSIME server
    - `rm -rf ~/.ivy2/cache/org.ensime`
    - `rm -rf ~/.ivy2/local/org.ensime`
