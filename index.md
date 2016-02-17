@@ -16,5 +16,3 @@ ENSIME brings IDE features to your favourite text editor:
 - Errors and warnings in your code: *red squigglies*.
 
 We recommend going to the [Getting Started](getting_started) section if you would like to learn more.
-
-TODO: I'd like each feature to have images in the style of [the emacs website](http://nicolas-petton.fr/ressources/emacs-website/) instead of this list. Also an opportunity to show off each editor (if we have a little watermark that says "Emacs", "Atom", etc in the corner)
