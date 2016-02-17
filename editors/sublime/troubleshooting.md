@@ -25,6 +25,15 @@ The configuration file will be empty when you open it. Add the path to your SBT 
 
 After that you should be able to run the *Ensime: Startup* command from the Command Palette. If it doesn't work immediately, try restarting Sublime Text.
 
+
+## Server out of date
+
+Nuke old versions of the ENSIME server and try again
+
+- `rm -rf ~/.ivy2/cache/org.ensime`
+- `rm -rf ~/.ivy2/local/org.ensime`
+
+
 ## Checking Java and SBT Visiblity
 
 Unsure whether Sublime Text can see Java and SBT on your system application path? Try pasting the following commands one at a time into the Sublime Text console (*View menu / Show Console*).
