@@ -21,3 +21,4 @@ exclude: [bundle-vendor]
 
 gems:
   - jekyll-sitemap
+  - jekyll-mentions
