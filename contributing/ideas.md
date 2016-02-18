@@ -37,7 +37,7 @@ ENSIME could do something similar, but in a generic way (i.e. with all supported
 
 Mentored by @fommil and/or @a_dev_musing
 
-## Ensime Syntax Trees
+## ENSIME Syntax Trees
 
 This project is to build an independent parser representation of a file which contains information for all of the
 information in the file (including, for example, whitespace). Including some limited support for lensed interaction with
@@ -47,7 +47,7 @@ various use cases including better refactoring support and formatting.
 
 Mentored by @fommil and/or @a_dev_musing
 
-## Passive Hints Framework
+## ENSIME Passive Hints Framework
 
 [passive hints #848](https://github.com/ensime/ensime-server/issues/848) (ala quick fixes in IntelliJ IDEA)
 The aim of this project is to provide the tooling necessary to create 'quick-fix' support in ENSIME.  Possibly in
