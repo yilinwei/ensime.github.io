@@ -6,6 +6,18 @@ title: Ideas
 
 # Google Summer of Code Project Ideas
 
+## Source Code Preserving AST
+
+Scala refactoring support is currently limited because the compiler provides a typed Abstract Syntax Tree (AST) which does not preserve whitespace, comments or important syntactic features such as `for` comprehensions. Adding support for a so-called Concrete Syntax Tree (CST), preserving source code attributes, would overly complicate the compiler internals.
+
+A complementary - source-code preserving - AST would enable ENSIME and Scala IDEs to implement and share type-aware refactorings, addressing a major complaint of the scala developer community.
+
+Efforts such as [`scala.meta`](http://scalameta.org) have shown that it is extremely difficult to convert a typed AST into a source-code preserving AST. Instead of attempting full conversion, we propose to provide Lens-like objects that map a limited set of elements in a typed AST to elements into their source code AST, enabling a wide range of type-aware refactorings to be written.
+
+Several parsers already exist for the scala language, but each falls short of the requirements of this exercise. Nevertheless, they serve as a good launchpad and may avoid the need to write a parser from scratch: `scala.meta`, [scalariform](https://github.com/scala-ide/scalariform), [fastparse](https://github.com/lihaoyi/fastparse/tree/master/scalaparse/shared/src/main/scala/scalaparse) and [parboiled2](https://github.com/sirthias/parboiled2/tree/release-2.1/scalaParser/src).
+
+Mentored by `@fommil` and/or `@a_dev_musing`
+
 ## ENSIME Graphpocolypse
 
 A number of missing features and possible new features are not possible in ENSIME without additional information being
@@ -17,7 +29,7 @@ to enable new features.  More details about the current thinking can be found in
 * Show hierarchy
 * Unused methods
 
-Mentored by @fommil and/or @a_dev_musing
+Mentored by `@fommil` and/or `@a_dev_musing`
 
 ## ENSIME support for Dotty
 
@@ -26,17 +38,7 @@ are not currently available.  This work involves isolating the compiler interact
 a cleaner interface to the presentation compiler.  This then allows the swapping in of the Dotty compiler.  This project
 allows the student a great chance to explore the new Dotty compiler and help towards the future of the Scala language.
 
-Mentored by @fommil and/or @a_dev_musing
-
-## ENSIME Syntax Trees
-
-This project is to build an independent parser representation of a file which contains information for all of the
-information in the file (including, for example, whitespace). Including some limited support for lensed interaction with
-the main Scala AST. For example for refactoring it would be useful to go from a Range within the Scala AST to an EST
-position allowing refactoring to be done taking the fully text structure into account.  This opens up possibilities for
-various use cases including better refactoring support and formatting.
-
-Mentored by @fommil and/or @a_dev_musing
+Mentored by `@fommil` and/or `@a_dev_musing`
 
 ## ENSIME Passive Hints Framework
 
@@ -44,7 +46,7 @@ Mentored by @fommil and/or @a_dev_musing
 The aim of this project is to provide the tooling necessary to create 'quick-fix' support in ENSIME.  Possibly in
 collaboration with a linting tool to help developers improve their code.
 
-Mentored by @fommil and/or @a_dev_musing
+Mentored by `@fommil` and/or `@a_dev_musing`
 
 For now, here are some possible ideas:
 
@@ -58,7 +60,7 @@ Users already have jump to documentation (serviced by a webserver built into ENS
 'pop-up-doc' feature seen in IDEA and ScalaIDE.  The served documentation can also be improved to show sources (with
 cross linking) and better documentation search features.
 
-Mentored by @fommil and/or @a_dev_musing
+Mentored by `@fommil` and/or `@a_dev_musing`
 
 ## ENSIME based program improvement tools
 
@@ -71,5 +73,4 @@ tools such as:
 The goal of this project is to create tooling around ENSIME to make it easier to build these kind of tools and then
 implement one or more such tools.
 
-Mentored by @fommil and/or @a_dev_musing
-
+Mentored by `@fommil` and/or `@a_dev_musing`
