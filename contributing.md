@@ -1,5 +1,5 @@
 ---
-layout: section
+layout: page
 order: 10
 title: Contributing
 site_nav_entry: true # this is an entry in the main site nav
