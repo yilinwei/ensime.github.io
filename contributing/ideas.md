@@ -28,15 +28,6 @@ allows the student a great chance to explore the new Dotty compiler and help tow
 
 Mentored by @fommil and/or @a_dev_musing
 
-## ENSIME Build tool integration
-
-A project to provide better build tool (e.g. Sbt/Gradle) integration with ENSIME.
-ScalaIDE wraps components of SBT to provide compile integration.  It would be great if
-ENSIME could do something similar, but in a generic way (i.e. with all supported build tools).  A generic interface
- and integration modules would allow better compilation support.
-
-Mentored by @fommil and/or @a_dev_musing
-
 ## ENSIME Syntax Trees
 
 This project is to build an independent parser representation of a file which contains information for all of the
@@ -68,14 +59,6 @@ Users already have jump to documentation (serviced by a webserver built into ENS
 cross linking) and better documentation search features.
 
 Mentored by @fommil and/or @a_dev_musing
-
-## ENSIME Bug and feature hunt
-
-There are lots of open tickets in the [ENSIME issue tracker](https://github.com/ensime/ensime-server).  Some of which
-are no longer relevant or valid.  This project would be about tackling as many of them as time permits.
-It will be a good chance to learn about the ENSIME and the presentation compiler infrastructure.
-So issues may be simple some much more challenging but addressing them (reviewing, exploring, fixing) will have
-a huge impact on the project as a whole.
 
 ## ENSIME based program improvement tools
 
