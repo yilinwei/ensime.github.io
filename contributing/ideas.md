@@ -1,5 +1,5 @@
 ---
-layout: section
+layout: page
 order: 1
 title: Ideas
 ---
