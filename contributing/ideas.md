@@ -1,10 +1,11 @@
 ---
 layout: page
 order: 1
-title: Ideas
+title: Google Summer of Code Project Ideas
 ---
 
-# Google Summer of Code Project Ideas
+- TOC
+{:toc}
 
 ## Source Code Preserving AST
 
