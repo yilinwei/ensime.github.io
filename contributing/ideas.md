@@ -18,7 +18,7 @@ Efforts such as [`scala.meta`](http://scalameta.org) have shown that it is extre
 
 Several parsers already exist for the scala language, but each falls short of the requirements of this exercise. Nevertheless, they serve as a good launchpad and may avoid the need to write a parser from scratch: `scala.meta`, [scalariform](https://github.com/scala-ide/scalariform), [fastparse](https://github.com/lihaoyi/fastparse/tree/master/scalaparse/shared/src/main/scala/scalaparse), [parboiled2](https://github.com/sirthias/parboiled2/tree/release-2.1/scalaParser/src) and IntelliJ.
 
-Mentored by @fommil and/or @a_dev_musing
+Mentored by @fommil and/or @rorygraves
 
 
 ## The Graphpocalypse
@@ -46,7 +46,7 @@ It is expected that parts of this abstracted layer would be released as a separa
 
 This project offers the student a unique opportunity to explore and contribute to the next generation scala compiler, helping to shape the future of the language itself.
 
-Mentored by @a_dev_musing
+Mentored by @rorygraves
 
 
 ## Passive Hints Framework
@@ -55,7 +55,7 @@ Mentored by @a_dev_musing
 The aim of this project is to provide the tooling necessary to create 'quick-fix' support in ENSIME.  Possibly in
 collaboration with a linting tool to help developers improve their code.
 
-Mentored by @fommil and/or @a_dev_musing
+Mentored by @fommil and/or @rorygraves
 
 
 ## Pop up docs and better documentation support.
@@ -67,4 +67,4 @@ Users already have jump to documentation (serviced by a webserver built into ENS
 'pop-up-doc' feature seen in IDEA and ScalaIDE.  The served documentation can also be improved to show sources (with
 cross linking) and better documentation search features.
 
-Mentored by @fommil and/or @a_dev_musing
+Mentored by @fommil and/or @rorygraves
