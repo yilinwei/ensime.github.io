@@ -18,7 +18,7 @@ Efforts such as [`scala.meta`](http://scalameta.org) have shown that it is extre
 
 Several parsers already exist for the scala language, but each falls short of the requirements of this exercise. Nevertheless, they serve as a good launchpad and may avoid the need to write a parser from scratch: `scala.meta`, [scalariform](https://github.com/scala-ide/scalariform), [fastparse](https://github.com/lihaoyi/fastparse/tree/master/scalaparse/shared/src/main/scala/scalaparse), [parboiled2](https://github.com/sirthias/parboiled2/tree/release-2.1/scalaParser/src) and IntelliJ.
 
-Mentored by @fommil and/or @rorygraves
+Mentored by @fommil and/or @rorygraves and/or @xeno-by
 
 
 ## The Graphpocalypse
