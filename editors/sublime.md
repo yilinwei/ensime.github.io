@@ -1,7 +1,7 @@
 ---
 layout: section
 order: 7
-title: Sublime Text 3
+title: Sublime
 ---
 
 ![ENSIME Sublime screengrab](img/sublime-screenshot.png)
