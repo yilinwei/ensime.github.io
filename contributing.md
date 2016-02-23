@@ -13,7 +13,7 @@ The general architecture looks like this:
 
 
 The server API is documented in [org/ensime/api](https://github.com/ensime/ensime-server/tree/master/api/src/main/scala/org/ensime/api)
-with example JSON payloads in [org/ensime/jerk](https://github.com/ensime/ensime-server/blob/master/jerk/src/test/scala/org/ensime/jerk/JerkFormatsSpec.scala)
+with example JSON payloads in [org/ensime/jerky](https://github.com/ensime/ensime-server/blob/master/protocol-jerky/src/test/scala/org/ensime/jerk/JerkFormatsSpec.scala)
 
 ##Compiling `ensime-server`
 
