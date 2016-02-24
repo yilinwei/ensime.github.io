@@ -165,6 +165,6 @@ When you want to swap back to using official snapshots, clear out your `~/.ivy2/
 
 The ENSIME project is comprised of several github repositories. Follow these links for more information:
 
-- https://github.com/ensime/ensime-server/  (server, main project ; report issues there)
-- https://github.com/ensime/ensime-emacs/  (emacs client)
-- https://github.com/ensime/ensime-sbt/ (.ensime generator for sbt)
+- [ensime-server](https://github.com/ensime/ensime-server/) -- server and main project - report issues there
+- [ensime-emacs](https://github.com/ensime/ensime-emacs/)  -- emacs client
+- [ensime-sbt](https://github.com/ensime/ensime-sbt/) -- `.ensime` generator for `sbt`
