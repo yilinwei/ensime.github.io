@@ -79,7 +79,10 @@ If your project uses one of these supported build tools, visit the link, follow 
 
 ### Manual
 
-(Not recommended except in dire circumstances) You can create an `.ensime` manually: see an example [[here|Example-Configuration-File]].
+(Not recommended except in dire circumstances) You can create an `.ensime` manually.
+
+The schema of the `.ensime` file is defined in [`org.ensime.api.EnsimeConfig`](https://github.com/ensime/ensime-server/blob/master/api/src/main/scala/org/ensime/api/config.scala) and examples are available in [`EnsimeConfigSpec.scala`](https://github.com/ensime/ensime-server/blob/master/core/src/test/scala/org/ensime/config/EnsimeConfigSpec.scala) (you can also get substantial examples by running `sbt gen-ensime` against a supported project, such as `ensime-server` itself).
+
 
 ## Starting
 
