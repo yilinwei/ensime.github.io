@@ -12,7 +12,8 @@ Most tickets can be resolved easily by following a simple process.
 1. nuke old versions of the ENSIME server
    - `rm -rf ~/.ivy2/cache/org.ensime`
    - `rm -rf ~/.ivy2/local/org.ensime`
-2. use the latest release of `ensime` for Atom.
+   - `rm -rf ~/.atom/packages/Ensime/classpath*`
+2. use the latest release of `ensime` for Atom. `apm install ensime`
 3. check the [tickets flagged as FAQ for Atom](https://github.com/ensime/ensime-atom/issues?labels=FAQ).
 4. check the [tickets flagged as FAQ on the server](https://github.com/ensime/ensime-server/issues?labels=FAQ).
 5. search for duplicates, especially the [most recently updated tickets](http://github.com/ensime/ensime-atom/issues?direction=desc&sort=updated)
