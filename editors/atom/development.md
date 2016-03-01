@@ -21,6 +21,36 @@ In detail:
 - View / Developer / Toggle Developer Tools gives you the usual console and other inspectors.
 
 
+### Developing ensime-client node package in parallel
+
+When developing ensime-atom, chances are high you will most likely need to develop the node package [ensime-client](https://www.npmjs.com/package/ensime-client) in parallel. This npm package was recently pulled out from ensime-atom to be a shared client lib for the node environment to use both in ensime-atom and a planned ensime-vscode.
+
+To make the development smooth you will probably want to follow similar instructions as these:
+
+https://atom.io/docs/latest/behind-atom-developing-node-modules
+
+Specific example of these follow.
+
+Notice that as part of pulling these things out, the ensime-client is no longer depending on Atom's automatic compilation of coffeescript. It instead uses grunt to compile the coffescript into js that is exported. Therefore you'll need to set up a watch task as well.
+
+- `git clone https://github.com/hedefalk/ensime-node`
+- `cd ensime-node`
+- `npm install`
+- `npm link` (this creates a softlink from npm registry to this working directory)
+- `apm rebuild` (atom special sauce)
+- `npm run watch` (alias for grunt watch, but might replace for gulp) 
+
+On the ensime-atom side:
+- `cd ensime-atom`
+- `npm link ensime-client` (this create a softlink from node_modules to the npm registry)
+
+The npm link business is basically just this:
+```
+/Users/viktor/dev/projects/atom-ensime/node_modules/ensime-client -> /usr/local/lib/node_modules/ensime-client -> /Users/viktor/dev/projects/ensime-node
+```
+
+where `ensime-node` is my checked out git repo.
+
 ## Tricks and tips
 
 ### Access ENSIME from the console
@@ -56,4 +86,3 @@ client = e.clientOfEditor(atom.workspace.getActiveTextEditor())
 - [Space pen]( https://github.com/atom/space-pen/blob/master/src/space-pen.coffee)
 - [Space pen views]( https://github.com/atom/atom-space-pen-views/blob/master/src/scroll-view.coffee)
 - [Find and replace](https://github.com/atom/find-and-replace/blob/master/lib/project/results-pane.coffee)
-

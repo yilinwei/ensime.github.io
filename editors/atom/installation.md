@@ -14,13 +14,28 @@ Before you start make sure you have:
 
 ## Installing Atom ENSIME
 
-Inside Atom:
+Either of
 
-- Open _Preferences_
-- Click _Install_
-- Search for _ENSIME_ in the search box.
-- Click _Install_.
+<dl>
+  <dt>Command line</dt>
+  <dd>
+    <ul>
+      <li>`apm install ensime`</li>
+    </ul>
+  </dd>
+  
+  <dt>Inside Atom:</dt>
+  <dd>
+    <ul>
+      <li>Open _Preferences_</li>
+      <li>Click _Install_</li>
+      <li>Search for _ENSIME_ in the search box.</li>
+      <li>Click _Install_</li>
+    </ul>
+  </dd>
+</dl>
 
+  
 Finally, you need to tell Atom where sbt is installed:
 
 - Open _Preferences_ in Atom
@@ -32,28 +47,30 @@ For example, enter _/usr/local/bin/sbt_ if there's where sbt is for you.
 
 ## Using Atom
 
-- Open any folder that contains a _.ensime_ in the root
+- Open any folder that contains at least one _.ensime_
 - cmd-shift-P _ENSIME: Start_
 - Then you can use the features above!
 
-Every command in ENSIME can be found using cmd-shift-P and typing "ensime".
+Every command in ENSIME can be found using cmd-shift-P and typing "ensime". Some are context bound and will turn up in a specific state, like "Ensime:lockTypeHover" which will only be available while a type hover tooltip is displayed.
 
 ## Related Atom Packages
 
-The following are automatically installed by Atom ENSIME:
+### The following are automatically installed by Atom ENSIME:
 
 - [language-scala] for syntax highlighting.
 - [hyperclick] for code navigation. ENSIME hooks in as provider.
 - [browser-plus] to display ScalaDoc.
 - [linter] for display of errors and warnings.
 
+This can be turned of via a setting if you for personal preference would like to uninstall or disable any of these packages.
 
-These are recommended:
+### These are recommended:
 
 - [Project manager] which is handy to keep track of projects.
 
-- Need plugin to navigate back to last cursor position when "code surfing". Maybe [last cursor position].
-
+- A plugin to navigate back to last cursor position when "code surfing" is useful. Something like https://github.com/fcharron/last-cursor-position or https://atom.io/packages/navigation-history
+  
+ Non of which has many downloads though…
 
 [sbt]: http://www.scala-sbt.org/download.html
 [gen-ensime]: /build_tools/sbt/
@@ -63,4 +80,3 @@ These are recommended:
 [Project manager]: https://github.com/danielbrodin/atom-project-manager
 [last cursor position]: https://atom.io/packages/last-cursor-position
 [Atom]: https://atom.io/
-
