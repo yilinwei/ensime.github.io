@@ -8,8 +8,9 @@ Thank you for using ENSIME on Atom!
 
 Most tickets can be resolved easily by following a simple process.
 
+0. If Atom was working, and you're having a problem after updating, please remove your project `.ensime_cache` folder and restart Atom and ENSIME.
 0. fully compile your project
-1. nuke old versions of the ENSIME server, cached classpaths and possibly SNAPSHOT deps
+2. nuke old versions of the ENSIME server, cached classpaths and possibly SNAPSHOT deps
    - `rm -rf ~/.ivy2/cache/org.ensime`
    - `rm -rf ~/.ivy2/local/`
    - `rm -rf ~/.coursier/cache/v1/https/oss.sonatype.org/content/repositories/snapshots/`
