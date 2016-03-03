@@ -27,7 +27,7 @@ When developing ensime-atom, chances are high you will most likely need to devel
 
 To make the development smooth you will probably want to follow similar instructions as these:
 
-https://atom.io/docs/latest/behind-atom-developing-node-modules
+[https://atom.io/docs/latest/behind-atom-developing-node-modules](https://atom.io/docs/latest/behind-atom-developing-node-modules)
 
 Specific example of these follow.
 
@@ -41,6 +41,7 @@ Notice that as part of pulling these things out, the ensime-client is no longer 
 - `npm run watch` (alias for grunt watch, but might replace for gulp) 
 
 On the ensime-atom side:
+
 - `cd ensime-atom`
 - `npm link ensime-client` (this create a softlink from node_modules to the npm registry)
 

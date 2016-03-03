@@ -14,27 +14,23 @@ Before you start make sure you have:
 
 ## Installing Atom ENSIME
 
-Either of
+You can install Atom ENSIME either from the command line or from inside Atom.
 
-<dl>
-  <dt>Command line</dt>
-  <dd>
-    <ul>
-      <li>`apm install ensime`</li>
-    </ul>
-  </dd>
-  
-  <dt>Inside Atom:</dt>
-  <dd>
-    <ul>
-      <li>Open _Preferences_</li>
-      <li>Click _Install_</li>
-      <li>Search for _ENSIME_ in the search box.</li>
-      <li>Click _Install_</li>
-    </ul>
-  </dd>
-</dl>
+#### From the command line
 
+- `apm install ensime`
+
+_or_
+
+#### Inside Atom
+
+- Open _Preferences_
+- Click _Install_
+- Search for _ENSIME_ in the search box
+- Click _Install_
+
+
+### Configuring Atom
   
 Finally, you need to tell Atom where sbt is installed:
 
@@ -70,11 +66,12 @@ This can be turned of via a setting if you for personal preference would like to
 
 - A plugin to navigate back to last cursor position when "code surfing" is useful. Something like https://github.com/fcharron/last-cursor-position or https://atom.io/packages/navigation-history
   
- Non of which has many downloads though…
+ None of which has many downloads though…
 
 [sbt]: http://www.scala-sbt.org/download.html
 [gen-ensime]: /build_tools/sbt/
 [language-scala]: https://atom.io/packages/language-scala
+[linter]: https://atom.io/packages/linter
 [hyperclick]: https://atom.io/packages/hyperclick
 [browser-plus]: https://atom.io/packages/browser-plus
 [Project manager]: https://github.com/danielbrodin/atom-project-manager
