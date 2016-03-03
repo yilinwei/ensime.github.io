@@ -9,10 +9,11 @@ Thank you for using ENSIME on Emacs!
 Most tickets can be resolved easily by following a simple process.
 
 0. fully compile your project
-1. nuke old versions of the ENSIME server
+1. nuke old versions of the ENSIME server (and possibly SNAPSHOT deps)
    - `rm -rf ~/.ivy2/cache/org.ensime`
-   - `rm -rf ~/.ivy2/local/org.ensime`
+   - `rm -rf ~/.ivy2/local/`
    - `rm -rf ~/.emacs.d/ensime`
+   - `rm -rf ~/.coursier/cache/v1/https/oss.sonatype.org/content/repositories/snapshots/`
 2. use the latest release of `ensime` for Emacs (i.e. update `ensime` via MELPA).
 3. check the [tickets flagged as FAQ for Emacs](https://github.com/ensime/ensime-emacs/issues?labels=FAQ).
 4. check the [tickets flagged as FAQ on the server](https://github.com/ensime/ensime-server/issues?labels=FAQ).
