@@ -2,10 +2,16 @@
 layout: default
 ---
 
-<div class="page">
-  <a href="https://github.com/ensime/ensime.github.io/edit/master/{{ page.path }}">[edit]</a>
-  <br/><br/>
+{% include site_sidebar.html %}
 
-  <h1 class="page-title">{{ page.title }} </h1>
-  {{ content }}
+<div class="content container">
+  <div class="page">
+    <h1 class="page-title">{{ page.title }}</h1>
+
+    {{ content }}
+
+    <br/><br/>
+
+    <a href="https://github.com/ensime/ensime.github.io/edit/master/{{ page.path }}">[edit]</a>
+  </div>
 </div>

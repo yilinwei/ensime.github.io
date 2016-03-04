@@ -48,7 +48,7 @@ code > span.in { color: #808080; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">ENSIME</h1>
 <h2 class="author">Rory Graves and Sam Halliday</h2>
-<h3 class="date">Scala Days 2015</h3>
+<h3 class="date"><a href="https://www.parleys.com/tutorial/ensime-why-would-anybody-build-another-scala-ide">Video from Scala Days 2015</a></h3>
 </div>
 <h1 id="introduction">Introduction</h1>
 <div class="notes">
@@ -177,7 +177,7 @@ Your browser does not support the video tag.
 </div>
 <h1 id="architecture">Architecture<span class="tag" data-tag-name="SAM"></span></h1>
 <hr />
-<p><img src="file:images/architecture.png" alt="" /></p>
+<p><img src="images/architecture.png" alt="" /></p>
 <div class="notes">
 <p>This is an architectural overview of the internals of the ensime-server, which is bounded here by the dotted lines.</p>
 <p>The text editor communicates with the server via SWANK, which is a bidirectional TCP/IP sockets protocol using S-Expressions as the language. This is really convenient for emacs. We’ll talk about protocols later because we really don’t see ENSIME as being an emacs only library.</p>
@@ -196,7 +196,7 @@ Your browser does not support the video tag.
 </div>
 <h1 id="ecosystem">Ecosystem<span class="tag" data-tag-name="SAM"></span></h1>
 <h2 id="projects">Projects</h2>
-<p><img src="file:images/projects.png" alt="" /></p>
+<p><img src="images/projects.png" alt="" /></p>
 <div class="notes">
 <p>ENSIME isn’t just one project. The server is a Scala project with separate branches to support the three active stable release versions of Scala. (Yes, people are still using Scala 2.9 in production systems).</p>
 <p>The compiler API has been quite volatile across versions, so we are not able to offer a single source build. The server jars are published as snapshots to Sonatype, more about that in a few slides.</p>
@@ -400,14 +400,14 @@ Your browser does not support the video tag.
 <p>— Robert Morris’ corollary (Y-Combinator)</p>
 </blockquote>
 <h2 id="s-expressions">S-Expressions</h2>
-<p><img src="file:images/sexp.png" alt="" /></p>
+<p><img src="images/sexp.png" alt="" /></p>
 <div class="notes">
 <p>Let’s talk about lisp for a little bit, or more specifically, S-Expressions.</p>
 <p>For the emacs users among you, this is second nature.</p>
 <p>An S-Expression is either an atom - symbol, string, number, array, hashmap, etc - or a cons of two S-Expressions, using this parenthesis notation with a dot to separate the two parts.</p>
 </div>
 <hr />
-<p><img src="file:images/sexp-list.png" alt="" /></p>
+<p><img src="images/sexp-list.png" alt="" /></p>
 <div class="sourceCode"><pre class="sourceCode commonlisp"><code class="sourceCode commonlisp">(a . (b . (c . <span class="kw">nil</span>)))
 
 (a b c) <span class="co">;; list syntax</span></code></pre></div>

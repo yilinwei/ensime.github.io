@@ -67,7 +67,7 @@ body {
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
-  color: #268bd2;
+  color: #f1626b;
   text-decoration: none;
 }
 a strong {
@@ -129,6 +129,9 @@ ul, ol, dl {
 ul ul {
   margin-bottom: 0;
 }
+ol ul {
+  margin-bottom: 0;
+}
 
 dt {
   font-weight: bold;
@@ -160,7 +163,7 @@ abbr[title] {
 /* Code */
 code,
 pre {
-  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-family: Inconsolata, Consolas, Menlo, Monaco, "Courier New", monospace;
 }
 code {
   padding: .25em .5em;
@@ -301,6 +304,7 @@ tbody tr:nth-child(odd) th {
   padding-right: 1rem;
   margin-left:  auto;
   margin-right: auto;
+  text-align: justify;
 }
 
 

@@ -1,6 +1,5 @@
 ---
-layout: subpage
-section: /build_tools/
+layout: section
 order: 6
 title: Gradle
 ---
@@ -10,6 +9,41 @@ This [Gradle](https://gradle.org) plugin will create .ensime configuration files
 Note that this does not support the new [software model](https://docs.gradle.org/current/userguide/pt06.html) configuration or the [Play Framework](https://playframework.com) [plugin](https://docs.gradle.org/current/userguide/play_plugin.html).  Yet.
 
 The source for this plugin is found in its own GitHub project [ensime/ensime-gradle](https://github.com/ensime/ensime-gradle)
+
+## Install
+The decision to use ENSIME is per-user, rather than per-project. Add the following snippet to your `~/.gradle/init.gradle` file:
+
+```groovy
+apply plugin:AddDepPlugin
+
+class AddDepPlugin  implements Plugin<Gradle> {
+  def addDeps = ["org.ensime.gradle": "gradle.plugin.net.coacoas.gradle:ensime-gradle:0.2.2"]
+  def addRepos = ["https://plugins.gradle.org/m2/"]
+
+  void apply(Gradle gradle) {
+    def add = 0
+    gradle.allprojects { project ->
+      plugins.whenPluginAdded { t ->
+        if (++add == 1) {
+          project.getBuildScriptSource()
+          def bs = project.getBuildscript()
+          bs.getDependencies()
+          def repo = bs.getRepositories()
+          def ccf = bs.class.getDeclaredField("classpathConfiguration")
+          ccf.setAccessible(true)
+          def cc = ccf.get(bs)
+          addDeps.each { k,v-> cc.dependencies.add(project.dependencies.create(v))}
+          addRepos.each { k-> repo.maven { -> setUrl(k) } }
+        }
+        if (add == 8)
+          addDeps.each { k,v ->
+            if (!k.startsWith("x")) project.apply([plugin: k])
+          }
+      }
+    }
+  }
+}
+```
 
 ### Using the plugin in your build
 

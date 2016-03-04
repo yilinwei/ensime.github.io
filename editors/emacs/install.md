@@ -1,6 +1,5 @@
 ---
-layout: subpage
-section: /editors/emacs/
+layout: section
 order: 2
 title: Installation
 ---
@@ -19,7 +18,9 @@ Please help by updating it, moving the non-emacs parts into the their correct ho
 - Scala 2.10 or 2.11.5 or higher
 
 ## Installing ensime-mode for emacs
+
 The recommended way is to use MELPA and to set up a `scala-mode-hook`:
+
 ```elisp
 ;; if you're new to the MELPA package manager, just include
 ;; this entire snippet in your `~/.emacs` file and follow
@@ -39,7 +40,7 @@ The recommended way is to use MELPA and to set up a `scala-mode-hook`:
 ;; (setenv "PATH" (concat "/path/to/sbt/bin:" (getenv "PATH")))
 ;; (setenv "PATH" (concat "/path/to/scala/bin:" (getenv "PATH")))
 ;;
-;; On Macs, it might be a safer bet to use exec-path instead of PATH, for instance: 
+;; On Macs, it might be a safer bet to use exec-path instead of PATH, for instance:
 ;; (setq exec-path (append exec-path '("/usr/local/bin")))
 
 (require 'ensime)
@@ -59,7 +60,9 @@ Much of the actual text editing is provided by the excellent
 be customised.
 
 ### Keeping ensime-mode up-to-date
+
 ENSIME is under active development and there will be from time to time backward-incompatible changes, so it's important to stay up to date. To upgrade all MELPA packages, type:
+
 ```
 M-x list-packages [RETURN] U [RETURN] x [RETURN]
 ```
@@ -76,7 +79,10 @@ If your project uses one of these supported build tools, visit the link, follow 
 
 ### Manual
 
-(Not recommended except in dire circumstances) You can create an `.ensime` manually: see an example [[here|Example-Configuration-File]].
+(Not recommended except in dire circumstances) You can create an `.ensime` manually.
+
+The schema of the `.ensime` file is defined in [`org.ensime.api.EnsimeConfig`](https://github.com/ensime/ensime-server/blob/master/api/src/main/scala/org/ensime/api/config.scala) and examples are available in [`EnsimeConfigSpec.scala`](https://github.com/ensime/ensime-server/blob/master/core/src/test/scala/org/ensime/config/EnsimeConfigSpec.scala) (you can also get substantial examples by running `sbt gen-ensime` against a supported project, such as `ensime-server` itself).
+
 
 ## Starting
 
@@ -107,18 +113,25 @@ The [[Edit Compile Workflow]] is very important to help you to understand why fu
 Emacs-wide customisations are defined in [ensime-vars.el](http://github.com/ensime/ensime-emacs/blob/master/ensime-vars.el) and will appear in `M-x customize`.
 
 # Manual installation
+
 In case the recommended installation method doesn't work for you, or you want to hack on ensime, follow these steps:
+
 ## Installing ensime-mode manually
+
 This is useful if you want to develop ENSIME.
 Clone the github repo:
 
-```git clone https://github.com/ensime/ensime-emacs.git```
+```
+git clone https://github.com/ensime/ensime-emacs.git
+```
 
 into a directory of your choice and add it explicitly into your `~/.emacs`
+
 ```elisp
 ;; assuming you put the repository in ~/.emacs.d/ensime
 (add-to-list 'load-path (concat user-emacs-directory "ensime"))
 ```
+
 Note that you will need to install all the ENSIME dependencies as well. They are listed in the headers of the `ensime.el` file. You can also install ENSIME from source and use MELPA to install the dependencies.
 
 ## Installing the server from assembly builds or source
@@ -140,6 +153,7 @@ cp target/scala-2.10/ensime_2.10-0.9.10-SNAPSHOT-assembly.jar ~/.emacs.d/ensime/
 When you want to swap back to using official releases, delete your `-assembly.jar` files.
 
 ## Installing ensime-sbt from source
+
 ```
 git clone https://github.com/ensime/ensime-sbt.git
 sbt publishLocal
@@ -151,8 +165,9 @@ rm -rf ~/.ivy2/cache/scala_2.10/sbt_0.13/org.ensime # clears official snapshots
 When you want to swap back to using official snapshots, clear out your `~/.ivy2/local`.
 
 # For more information
+
 The ENSIME project is comprised of several github repositories. Follow these links for more information:
 
-- https://github.com/ensime/ensime-server/  (server, main project ; report issues there)
-- https://github.com/ensime/ensime-emacs/  (emacs client)
-- https://github.com/ensime/ensime-sbt/ (.ensime generator for sbt)
+- [ensime-server](https://github.com/ensime/ensime-server/) -- server and main project - report issues there
+- [ensime-emacs](https://github.com/ensime/ensime-emacs/)  -- emacs client
+- [ensime-sbt](https://github.com/ensime/ensime-sbt/) -- `.ensime` generator for `sbt`

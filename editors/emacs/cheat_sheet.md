@@ -1,6 +1,5 @@
 ---
-layout: subpage
-section: /editors/emacs/
+layout: section
 order: 1
 title: Cheat Sheet
 ---
@@ -115,6 +114,7 @@ Much of this is a wrapper over [`sbt-mode`](https://github.com/hvesalai/sbt-mode
 | `C-c C-d i` | Inspect the value of the symbol under the cursor |
 
 ## REPL
+
 | Shortcut    | Description |
 |-------------|-------------|
 | `C-c C-v z` | Start the Scala REPL or switch to it |
