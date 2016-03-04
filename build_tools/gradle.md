@@ -14,35 +14,47 @@ The source for this plugin is found in its own GitHub project [ensime/ensime-gra
 The decision to use ENSIME is per-user, rather than per-project. Add the following snippet to your `~/.gradle/init.gradle` file:
 
 ```groovy
-apply plugin:AddDepPlugin
 
-class AddDepPlugin  implements Plugin<Gradle> {
-  def addDeps = ["org.ensime.gradle": "gradle.plugin.net.coacoas.gradle:ensime-gradle:0.2.2"]
-  def addRepos = ["https://plugins.gradle.org/m2/"]
+apply plugin: AddEnsimePlugin
+
+class AddEnsimePlugin  implements Plugin<Gradle> {
+  def supportedPlugins = [
+    'org.gradle.api.plugins.JavaPlugin',
+    'org.gradle.api.plugins.ScalaPlugin',
+    'jp.leafytree.gradle.AndroidScalaPlugin'
+  ]
 
   void apply(Gradle gradle) {
-    def add = 0
+    def added = false
+
     gradle.allprojects { project ->
-      plugins.whenPluginAdded { t ->
-        if (++add == 1) {
-          project.getBuildScriptSource()
-          def bs = project.getBuildscript()
-          bs.getDependencies()
-          def repo = bs.getRepositories()
-          def ccf = bs.class.getDeclaredField("classpathConfiguration")
-          ccf.setAccessible(true)
-          def cc = ccf.get(bs)
-          addDeps.each { k,v-> cc.dependencies.add(project.dependencies.create(v))}
-          addRepos.each { k-> repo.maven { -> setUrl(k) } }
-        }
-        if (add == 8)
-          addDeps.each { k,v ->
-            if (!k.startsWith("x")) project.apply([plugin: k])
+      project.with { 
+        if (parent == null) {
+          buildscript { 
+            repositories {
+              jcenter()
+              maven {
+                name 'JFrog OSS Snapshot Repository'
+                url 'http://oss.jfrog.org/oss-snapshot-local'
+              }
+            }
+            dependencies {
+              classpath 'net.coacoas.gradle:ensime-gradle:0.2.6
+            }
           }
+        }
+
+        plugins.whenPluginAdded { plugin ->
+          if (!added && supportedPlugins.contains(plugin.class.name)) { 
+            rootProject.apply plugin: 'org.ensime.gradle'
+            added = true
+          }
+        }
       }
     }
   }
 }
+
 ```
 
 ### Using the plugin in your build
@@ -51,7 +63,7 @@ For gradle 2.1+
 
 ```groovy
 plugins {
-  id 'org.ensime.gradle' version '0.2.3'
+  id 'org.ensime.gradle' version '0.2.6'
 }
 ```
 
@@ -64,7 +76,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'net.coacoas.gradle:ensime-gradle:0.2.3'
+    classpath 'net.coacoas.gradle:ensime-gradle:0.2.6'
   }
 }
 ```
@@ -80,7 +92,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'net.coacoas.gradle:ensime-gradle:0.2.3-SNAPSHOT'
+    classpath 'net.coacoas.gradle:ensime-gradle:0.2.7-SNAPSHOT'
   }
 }
 ```
