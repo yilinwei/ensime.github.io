@@ -39,7 +39,7 @@ class AddEnsimePlugin  implements Plugin<Gradle> {
               }
             }
             dependencies {
-              classpath 'net.coacoas.gradle:ensime-gradle:0.2.6
+              classpath 'net.coacoas.gradle:ensime-gradle:0.2.6'
             }
           }
         }
