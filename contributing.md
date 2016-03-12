@@ -9,7 +9,7 @@ The first thing to do is to check out the code for the component that you want t
 
 The general architecture looks like this:
 
-![architecture](/talks/scalasphere2016/images/architecture.png)
+![architecture](/talks/scalasphere16/images/architecture.png)
 
 which is explained in a recent [talk about ENSIME](/talks/scalasphere16/images/architecture.png).
 
