@@ -69,20 +69,7 @@ M-x list-packages [RETURN] U [RETURN] x [RETURN]
 
 ## Creating a `.ensime` file
 
-### Build tool
-
-If your project uses one of these supported build tools, visit the link, follow the instructions, and then come back here:
-
-* [ensime-sbt](https://github.com/ensime/ensime-sbt)
-* [ensime-gradle](https://github.com/ensime/ensime-gradle)
-* [ensime-maven](https://github.com/ensime/ensime-maven)
-
-### Manual
-
-(Not recommended except in dire circumstances) You can create an `.ensime` manually.
-
-The schema of the `.ensime` file is defined in [`org.ensime.api.EnsimeConfig`](https://github.com/ensime/ensime-server/blob/master/api/src/main/scala/org/ensime/api/config.scala) and examples are available in [`EnsimeConfigSpec.scala`](https://github.com/ensime/ensime-server/blob/master/core/src/test/scala/org/ensime/config/EnsimeConfigSpec.scala) (you can also get substantial examples by running `sbt gen-ensime` against a supported project, such as `ensime-server` itself).
-
+You'll need to install support for one of the [build tools](http://ensime.github.io/build_tools/) that supports ENSIME in order to generate a `.ensime` file for your project.
 
 ## Starting
 
@@ -94,7 +81,7 @@ M-x ensime
 
 On first use (and following MELPA updates) this command will fetch the latest ENSIME server component for the project's version of scala. To force an update of the server to the latest snapshot release, type `M-x ensime-update`.
 
-If the download fails, or you want to use a specific version of the server, install the developer version following the instructions [here](#installing-the-server-from-source).
+If the download fails, or you want to use a specific version of the server, install the developer version following manual server installation as per the [Contributing Guide](/contributing).
 
 On first startup for a project, you will need to wait several minutes
 
@@ -133,36 +120,6 @@ into a directory of your choice and add it explicitly into your `~/.emacs`
 ```
 
 Note that you will need to install all the ENSIME dependencies as well. They are listed in the headers of the `ensime.el` file. You can also install ENSIME from source and use MELPA to install the dependencies.
-
-## Installing the server from assembly builds or source
-
-**Requires `ensime-sbt` 0.3.0 or later.**
-
-If an `-assembly.jar` file exists in your `.emacs.d/ensime` directory (for the expected binary version of scala and ENSIME) then it will always be used in preference to the `sbt` auto-update procedure.
-
-This is advantageous for developing on ENSIME and also to enable a simple install of the ENSIME server in restricted environments. SNAPSHOT assembly jars are provided at http://ensime.typelevel.org/ (with many thanks to typelevel for the use of their servers).
-
-To build your own server jars, do this:
-
-```
-git clone https://github.com/ensime/ensime-server.git
-sbt ++2.10.6 ensime/assembly # replace with your version of scala
-cp target/scala-2.10/ensime_2.10-0.9.10-SNAPSHOT-assembly.jar ~/.emacs.d/ensime/
-```
-
-When you want to swap back to using official releases, delete your `-assembly.jar` files.
-
-## Installing ensime-sbt from source
-
-```
-git clone https://github.com/ensime/ensime-sbt.git
-sbt publishLocal
-rm -rf ~/.ivy2/cache/scala_2.10/sbt_0.13/org.ensime # clears official snapshots
-```
-
-(changing as appropriate for backports to other versions of sbt)
-
-When you want to swap back to using official snapshots, clear out your `~/.ivy2/local`.
 
 # For more information
 
