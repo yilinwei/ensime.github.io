@@ -111,7 +111,7 @@ Example:
 
 ```groovy
 ensime {
-  scalaVersion   '2.11.7'
+  scalaVersion   '2.11.8'
   cacheDir       file('.ensime.cache.d')
 
   javaFlags      '-Xlint', '-wahoowa'
