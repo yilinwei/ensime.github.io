@@ -58,7 +58,7 @@ Every command in ENSIME can be found using cmd-shift-P and typing "ensime". Some
 - [browser-plus] to display ScalaDoc.
 - [linter] for display of errors and warnings.
 
-This can be turned of via a setting if you for personal preference would like to uninstall or disable any of these packages.
+This can be turned off via a setting if you for personal preference would like to uninstall or disable any of these packages.
 
 ### These are recommended:
 
