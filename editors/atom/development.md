@@ -65,7 +65,7 @@ To build your own server jars, do this:
 
 ```
 git clone https://github.com/ensime/ensime-server.git
-sbt ++2.11.7 ensime/assembly # replace with your version of scala
+sbt ++2.11.8 ensime/assembly # replace with your version of scala
 ln -s target/scala-2.11/ensime_2.11-0.9.10-SNAPSHOT-assembly.jar ~/.atom/packages/Ensime
 ```
 
