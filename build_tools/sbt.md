@@ -119,10 +119,10 @@ sbt.version=0.13.9
 ```
 
 
-### Contributing
+## Contributing
 
 You can check what runs in the CI by investigating the `.drone.yml`, `appveyor.yml` and `.travis.yml` files. These should give you a good feel for what to run locally.
 
-When submitting a PR, we will expect an accompanying test in the `sbt-test` folder. These use the [sbt scripted](http://eed3si9n.com/testing-sbt-plugins) plugin and you can simply create a template by following the examples.
+When submitting a PR, we expect an accompanying test in the `sbt-test` folder. These use the [sbt scripted](http://eed3si9n.com/testing-sbt-plugins) plugin and you can start by copying one of the existing tests (use symbolic links instead of copying files).
 
-To test locally, use `sbt publishLocal` (which will happen as part of running `sbt scripted`) and make your project's version match that of the snapshot you are building. Remember to nuke your `~/.ivy2/local` once the fix is merged and published upstream.
+To try your build locally, use `sbt publishLocal` (which will also happen as part of running `sbt scripted`) and make your required `ensime-sbt` version match that of the snapshot you are building. Remember to nuke your `~/.ivy2/local` once the fix is merged and published upstream.
