@@ -1,7 +1,7 @@
 ---
 layout: section
 order: 2
-title: Developing
+title: Contributing
 ---
 
 ## Working with the Atom ENSIME Source

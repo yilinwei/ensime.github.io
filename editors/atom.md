@@ -29,7 +29,7 @@ The ENSIME integration is a work in progress currently featuring:
 
 ## Get Involved
 
-- with [development];
+- with [contributing];
 - with [documentation];
 - chat in the [gitter room]; and
 - please try it out, be patient and read the [troubleshooting] guide!
@@ -37,6 +37,6 @@ The ENSIME integration is a work in progress currently featuring:
 [Atom]: https://atom.io/
 [installation guide]: installation
 [troubleshooting]: troubleshooting
-[development]: development
+[contributing]: contributing
 [documentation]: documentation
 [gitter room]: https://gitter.im/ensime/ensime-atom
