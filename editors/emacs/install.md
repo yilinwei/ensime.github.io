@@ -66,8 +66,6 @@ On first use for a project, you will need to wait a few moments for indexing to 
 
 Once the server is available, enjoy editing with the ENSIME commands that are conveniently summarised in our [Cheat Sheet](/editors/emacs/cheat_sheet).
 
-Customisations are defined in [ensime-vars.el](http://github.com/ensime/ensime-emacs/blob/master/ensime-vars.el) and will appear in `M-x customize`.
-
 
 ## Spacemacs
 

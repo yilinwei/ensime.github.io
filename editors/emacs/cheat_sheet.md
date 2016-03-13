@@ -6,7 +6,7 @@ title: Cheat Sheet
 
 ## Customisation
 
-To customise your ENSIME Emacs experience, don't forget to read through the user-customisable variables with `M-x customize-apropos RET ensime RET`.
+To customise your ENSIME Emacs experience, don't forget to read through the user-customisable variables with `M-x customize-apropos RET ensime RET`, as defined in [ensime-vars.el](http://github.com/ensime/ensime-emacs/blob/master/ensime-vars.el).
 
 ## Source
 
