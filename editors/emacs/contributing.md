@@ -8,7 +8,7 @@ title: Contributing
 
 The [GNU Emacs Lisp Reference Manual](https://www.gnu.org/software/emacs/manual/elisp.html) is a very enjoyable read and will prepare you for everything you need to contribute to any Emacs package.
 
-If you want a playground to exercise your newly found Emacs Lisp muscles, consider forking [@fommil's port of 99 problems](https://github.com/fommil/e99) and deleting the answers.
+If you want a playground to exercise your newly found Emacs Lisp muscles, consider forking @fommil's [port of 99 problems](https://github.com/fommil/e99) and re-implementing the answers.
 
 ## Setup
 

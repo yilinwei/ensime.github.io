@@ -30,7 +30,7 @@ The recommended way to install ENSIME is via MELPA and registering a `scala-mode
         (ensime-mode)))
 ```
 
-If necessary, make sure `sbt` is in your `PATH` environment. On OSX, set `exec-path` within Emacs, e.g.:
+For the server installation to work, make sure `sbt` is in your `PATH` environment. On OSX, set `exec-path` within Emacs, e.g.:
 
 ```elisp
 (setq exec-path (append exec-path '("/usr/local/bin")))
