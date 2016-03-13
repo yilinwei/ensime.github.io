@@ -4,7 +4,7 @@ order: 2
 title: Installation
 ---
 
-- Auto-generated Table of Contents
+- TOC
 {:toc}
 
 **THIS CONTENT IS OUT OF DATE**
@@ -98,33 +98,3 @@ Unless your project was compiled recently, ENSIME is likely to indicate spurious
 The [[Edit Compile Workflow]] is very important to help you to understand why functionality may be limited at certain times in your development cycle (e.g. when your source code is completely uncompilable).
 
 Emacs-wide customisations are defined in [ensime-vars.el](http://github.com/ensime/ensime-emacs/blob/master/ensime-vars.el) and will appear in `M-x customize`.
-
-# Manual installation
-
-In case the recommended installation method doesn't work for you, or you want to hack on ensime, follow these steps:
-
-## Installing ensime-mode manually
-
-This is useful if you want to develop ENSIME.
-Clone the github repo:
-
-```
-git clone https://github.com/ensime/ensime-emacs.git
-```
-
-into a directory of your choice and add it explicitly into your `~/.emacs`
-
-```elisp
-;; assuming you put the repository in ~/.emacs.d/ensime
-(add-to-list 'load-path (concat user-emacs-directory "ensime"))
-```
-
-Note that you will need to install all the ENSIME dependencies as well. They are listed in the headers of the `ensime.el` file. You can also install ENSIME from source and use MELPA to install the dependencies.
-
-# For more information
-
-The ENSIME project is comprised of several github repositories. Follow these links for more information:
-
-- [ensime-server](https://github.com/ensime/ensime-server/) -- server and main project - report issues there
-- [ensime-emacs](https://github.com/ensime/ensime-emacs/)  -- emacs client
-- [ensime-sbt](https://github.com/ensime/ensime-sbt/) -- `.ensime` generator for `sbt`
