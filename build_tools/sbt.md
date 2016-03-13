@@ -126,3 +126,5 @@ You can check what runs in the CI by investigating the `.drone.yml`, `appveyor.y
 When submitting a PR, we expect an accompanying test in the `sbt-test` folder. These use the [sbt scripted](http://eed3si9n.com/testing-sbt-plugins) plugin and you can start by copying one of the existing tests (use symbolic links instead of copying files).
 
 To try your build locally, use `sbt publishLocal` (which will also happen as part of running `sbt scripted`) and make your required `ensime-sbt` version match that of the snapshot you are building. Remember to nuke your `~/.ivy2/local` once the fix is merged and published upstream.
+
+Feel free to ask questions on the github issue tracker or [gitter.im/ensime/ensime-server](https://gitter.im/ensime/ensime-server) (there is no dedicated chat room for `ensime-sbt`).

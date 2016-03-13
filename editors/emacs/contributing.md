@@ -6,7 +6,7 @@ title: Contributing
 
 ## Setup
 
-First, clone the git repo hosted at [github.com/ensime/ensime-emacs](https://github.com/ensime/ensime-emacs). If you pick up a ticket, please comment on it to let us know so that we can help (and also to avoid overlapping with somebody else).
+First, clone the git repo hosted at [github.com/ensime/ensime-emacs](https://github.com/ensime/ensime-emacs). If you pick up a ticket, please comment on it to let us know so that we can help (and also to avoid overlapping with somebody else). Feel free to ask questions on the github issue tracker or [gitter.im/ensime/ensime-emacs](https://gitter.im/ensime/ensime-emacs).
 
 The `.drone.yml` describes what our CI does and this can be followed for your local development.
 
