@@ -38,9 +38,9 @@ If you want to add support for an editor not listed here, please get in touch at
 
 If you want to work on build tool support, there may be documentation at these locations:
 
-- [SBT](/build_tools/sbt/contributing)
-- [Maven](/build_tools/maven/contributing)
-- [Gradle](/build_tools/gradle/contributing)
+- [SBT](/build_tools/sbt#contributing)
+- [Maven](/build_tools/maven#contributing)
+- [Gradle](/build_tools/gradle#contributing)
 
 If you want to add support for a new build tool, the [manual `.ensime`](/build_tools/manual) instructions are a good place to start.
 
