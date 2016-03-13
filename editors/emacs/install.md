@@ -7,94 +7,76 @@ title: Installation
 - TOC
 {:toc}
 
-**THIS CONTENT IS OUT OF DATE**
-
-Please help by updating it, moving the non-emacs parts into the their correct home on this webpage, and fixing the broken links (which are a left-over from the migration from the old wiki).
 
 ## System requirements
-- Linux, Mac OS X or Windows
+
 - JDK 1.6+
-- Emacs 24 (24.4 is regularly tested)
-- Scala 2.10 or 2.11.5 or higher
+- Emacs 24.3+
+- Scala 2.10.4+ or 2.11.5+
 
-## Installing ensime-mode for emacs
 
-The recommended way is to use MELPA and to set up a `scala-mode-hook`:
+## Installing
+
+We assume that you already have [MELPA](http://melpa.org) set up as per our [Learning Emacs](/editors/emacs/learning) guide.
+
+The recommended way to install ENSIME is via MELPA and registering a `scala-mode-hook`:
 
 ```elisp
-;; if you're new to the MELPA package manager, just include
-;; this entire snippet in your `~/.emacs` file and follow
-;; the instructions in the comments.
-(require 'package)
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(package-initialize)
+(use-package ensime
+  :commands ensime ensime-mode)
 
-(when (not package-archive-contents)
-  (package-refresh-contents))
-
-;; Restart emacs and do `M-x package-install [RETURN] ensime [RETURN]`
-;; To keep up-to-date, do `M-x list-packages [RETURN] U x [RETURN]`
-
-;; If necessary, make sure "sbt" and "scala" are in the PATH environment
-;; (setenv "PATH" (concat "/path/to/sbt/bin:" (getenv "PATH")))
-;; (setenv "PATH" (concat "/path/to/scala/bin:" (getenv "PATH")))
-;;
-;; On Macs, it might be a safer bet to use exec-path instead of PATH, for instance:
-;; (setq exec-path (append exec-path '("/usr/local/bin")))
-
-(require 'ensime)
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-
-
-;; OPTIONAL
-;; there are some great Scala yasnippets, browse through:
-;; https://github.com/AndreaCrotti/yasnippet-snippets/tree/master/scala-mode
-(add-hook 'scala-mode-hook #'yas-minor-mode)
-;; but company-mode / yasnippet conflict. Disable TAB in company-mode with
-(define-key company-active-map [tab] nil)
+(add-hook 'scala-mode-hook
+    (lambda ()
+        (ensime-mode)))
 ```
 
-Much of the actual text editing is provided by the excellent
-[scala-mode2](https://github.com/hvesalai/scala-mode2), which can
-be customised.
+If necessary, make sure `sbt` is in your `PATH` environment. On OSX, set `exec-path` within Emacs, e.g.:
 
-### Keeping ensime-mode up-to-date
-
-ENSIME is under active development and there will be from time to time backward-incompatible changes, so it's important to stay up to date. To upgrade all MELPA packages, type:
-
-```
-M-x list-packages [RETURN] U [RETURN] x [RETURN]
+```elisp
+(setq exec-path (append exec-path '("/usr/local/bin")))
 ```
 
-## Creating a `.ensime` file
+Basic Scala support is provided by the excellent [`scala-mode2`](/editors/emacs/scala-mode) which provides many features specific to Scala major mode editing.
 
-You'll need to install support for one of the [build tools](http://ensime.github.io/build_tools/) that supports ENSIME in order to generate a `.ensime` file for your project.
+
+## Updating
+
+ENSIME is under active development and there will be from time to time backward-incompatible changes, so it's important to stay up to date.
+
+The server will be automatically upgraded when you upgrade the client, which will result in a short `*ensime-update*` session. You can manually force a server update by typing:
+
+```
+M-x ensime-server-update
+```
+
 
 ## Starting
 
-Simply compile your project with your build tool, navigate to a file or directory in your project and type:
+Compile your project with your [build tool](/build_tools) and generate a `.ensime` file. Then navigate to a file or directory in your project and type:
 
 ```
 M-x ensime
 ```
 
-On first use (and following MELPA updates) this command will fetch the latest ENSIME server component for the project's version of scala. To force an update of the server to the latest snapshot release, type `M-x ensime-update`.
+**Check that again**. It is very important that you compile your project and have generated a `.ensime` file from one of the supported build tools.
 
-If the download fails, or you want to use a specific version of the server, install the developer version following manual server installation as per the [Contributing Guide](/contributing).
+The first time you use ENSIME, you can expect to wait several minutes for the server and all of its dependencies to be downloaded.
 
-On first startup for a project, you will need to wait several minutes
+On first use for a project, you will need to wait a few moments for indexing to complete.
 
-Once the server is available, enjoy editing with the ENSIME commands that are conveniently
-summarised in our
-[ENSIME command reference](https://github.com/ensime/ensime-emacs/wiki/Emacs-Command-Reference)
-(or [read it straight from the source](http://github.com/ensime/ensime-emacs/blob/master/ensime-mode.el#L49)).
+Once the server is available, enjoy editing with the ENSIME commands that are conveniently summarised in our [Cheat Sheet](/editors/emacs/cheat_sheet).
 
-Unless your project was compiled recently, ENSIME is likely to indicate spurious type errors. You have two choices:
+Customisations are defined in [ensime-vars.el](http://github.com/ensime/ensime-emacs/blob/master/ensime-vars.el) and will appear in `M-x customize`.
 
-1. compile your project, for instance by typing `sbt compile test:compile` in a separate shell. ENSIME will notice the change and the errors should disappear.
-1. type `C-c C-c a` _if your project isn't too large_
 
-The [[Edit Compile Workflow]] is very important to help you to understand why functionality may be limited at certain times in your development cycle (e.g. when your source code is completely uncompilable).
+## Spacemacs
 
-Emacs-wide customisations are defined in [ensime-vars.el](http://github.com/ensime/ensime-emacs/blob/master/ensime-vars.el) and will appear in `M-x customize`.
+We do not officially support Spacemacs, so you may find the quality of ENSIME is not as high as it is for stock GNU Emacs. This is because:
+
+1. the core ENSIME contributors don't use Spacemacs
+2. nobody has stepped forward to write integration tests
+3. [they do not have a Code of Conduct](https://github.com/syl20bnr/spacemacs/pull/3484) that is compatible with [Typelevel](http://typelevel.org/conduct.html)
+
+If you're a Spacemacs / ENSIME contributor, you may wish to discuss features with us on [gitter.im/ensime/ensime-emacs](http://gitter.im/ensime/ensime-emacs) as they could have general applicability to all Emacs ENSIME users.
+
+Many people believe Spacemacs is to Emacs as stabilisers are to bicycles. If you're a Vim user wanting to try out Emacs, we have a [Learning Emacs](/editors/emacs/learning) page to help you get started and you may feel at home in [Evil Mode](https://bitbucket.org/lyro/evil/wiki/Home) with Vim-like key bindings.

@@ -1,10 +1,10 @@
 ---
 layout: section
 order: 3
-title: Visual Studio Code
+title: VS Code
 ---
 
-This hasn't been written yet, but several people have shown an interest. Please head over to
+This hasn't been written yet, but several people have shown an interest in [Visual Studio Code](https://code.visualstudio.com/). Please head over to
 
 - https://github.com/ensime/ensime-vscode
 - https://github.com/ensime/ensime-node
