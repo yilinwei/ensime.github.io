@@ -14,7 +14,7 @@
   .section-sidebar {
     position: fixed;
     top: 0;
-    left: 18rem;
+    left: 16rem;
     bottom: 0;
     width: 12rem;
     text-align: left;
@@ -39,6 +39,7 @@
 
 /* Sidebar nav */
 .section-sidebar-nav {
+  font-size: smaller;
   margin-bottom: 1rem;
 }
 .section-sidebar-nav-item {
@@ -80,14 +81,14 @@ a.section-sidebar-nav-item:focus {
 @media (min-width: 48em) {
   .section-content {
     max-width: 38rem;
-    margin-left: 32rem;
+    margin-left: 30rem;
     margin-right: 2rem;
   }
 }
 
 @media (min-width: 64em) {
   .section-content {
-    margin-left: 34rem;
+    margin-left: 32rem;
     margin-right: 4rem;
   }
 }
