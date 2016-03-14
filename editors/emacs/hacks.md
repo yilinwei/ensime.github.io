@@ -184,11 +184,11 @@ with `dir-locals.el'.")
   (yatemplate-fill-alist))
 ```
 
-e.g. create a file called `.dir-locals.el` at the base of your work project containing
+e.g. create a file called `.dir-locals.el` at the base of your `ensime-server` clone
 
 ```elisp
-((nil . ((yatemplate-owner . "Robot Overlord Masters PLC")
-         (yatemplate-license . "All Your Base Are Belong to Us!"))))
+((nil . ((yatemplate-owner . "https://github.com/ensime/ensime-server/graphs")
+         (yatemplate-license . "http://www.gnu.org/licenses/gpl.html"))))
 ```
 
 and create a template for scala files by creating `~/.emacs.d/templates/50:.*scala`
@@ -200,7 +200,7 @@ and create a template for scala files by creating `~/.emacs.d/templates/50:.*sca
 $0
 ```
 
-and a similar one for Emacs Lisp like in [`50:.*el`](https://github.com/fommil/dotfiles/blob/master/.emacs.d/templates/50:.*el).
+This is a similar one for Emacs Lisp: [`50:.*el`](https://github.com/fommil/dotfiles/blob/master/.emacs.d/templates/50:.*el).
 
 ### Smart Parentheses
 
