@@ -1,7 +1,7 @@
 ---
 layout: section
-order: 3
-title: scala-mode2
+order: 6
+title: scala-mode
 ---
 
 This mode can be used independently of ENSIME.

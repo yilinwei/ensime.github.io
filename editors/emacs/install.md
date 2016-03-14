@@ -1,6 +1,6 @@
 ---
 layout: section
-order: 2
+order: 3
 title: Installation
 ---
 
@@ -34,12 +34,12 @@ For the server installation to work, make sure `sbt` is in your `PATH` environme
 (setq exec-path (append exec-path '("/usr/local/bin")))
 ```
 
-Basic Scala support is provided by the excellent [`scala-mode2`](/editors/emacs/scala-mode) which provides many features specific to Scala major mode editing.
+Basic Scala support is provided by [`scala-mode2`](/editors/emacs/scala-mode) which provides many features specific to Scala major mode editing and sbt support is provided by [`sbt-mode`](/editors/emacs/sbt-mode). Both modes can be used independently of ENSIME and your are encouraged to read their standalone documentation to understand the role that they play.
 
 
 ## Updating
 
-ENSIME is under active development and there will be from time to time backward-incompatible changes, so it's important to stay up to date.
+ENSIME uses a continuous release and the developers assume that you are staying up to date with releases.
 
 The server will be automatically upgraded when you upgrade the client, which will result in a short `*ensime-update*` session. You can manually force a server update by typing:
 
@@ -62,17 +62,4 @@ The first time you use ENSIME, you can expect to wait several minutes for the se
 
 On first use for a project, you will need to wait a few moments for indexing to complete.
 
-Once the server is available, enjoy editing with the ENSIME commands that are conveniently summarised in our [Cheat Sheet](/editors/emacs/cheat_sheet).
-
-
-## Spacemacs
-
-We do not officially support Spacemacs, so you may find the quality of ENSIME is not as high as it is for stock GNU Emacs. This is because:
-
-1. the core ENSIME contributors don't use Spacemacs
-2. nobody has stepped forward to write integration tests
-3. [they do not have a Code of Conduct](https://github.com/syl20bnr/spacemacs/pull/3484) that is compatible with [Typelevel](http://typelevel.org/conduct.html)
-
-If you're a Spacemacs / ENSIME contributor, you may wish to discuss features with us on [gitter.im/ensime/ensime-emacs](http://gitter.im/ensime/ensime-emacs) as they could have general applicability to all Emacs ENSIME users.
-
-Many people believe Spacemacs is to Emacs as stabilisers are to bicycles. If you're a Vim user wanting to try out Emacs, we have a [Learning Emacs](/editors/emacs/learning) page to help you get started and you may feel at home in [Evil Mode](https://bitbucket.org/lyro/evil/wiki/Home) with Vim-like key bindings.
+Once the server is available, enjoy editing with the ENSIME commands that are documented in the [User Guide](/editors/emacs/user_guide) and consider using some of the suggestions in our [Hacks](/editors/emacs/hacks) page to improve your productivity in Emacs when editing Scala code.

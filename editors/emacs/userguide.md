@@ -1,7 +1,7 @@
 ---
 layout: section
-order: 2
-title: Workflow
+order: 4
+title: User Guide
 ---
 
 - TOC
