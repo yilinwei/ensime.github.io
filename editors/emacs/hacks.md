@@ -224,9 +224,10 @@ Once you realise that you can edit code on the level of code blocks, you'll wond
   (sp-pair "[" "]" :wrap "s-[") ;; C-[ sends ESC
   (sp-pair "{" "}" :wrap "C-{")
 
+  ;; WORKAROUND https://github.com/Fuco1/smartparens/issues/543
   (bind-key "C-<left>" nil smartparens-mode-map)
   (bind-key "C-<right>" nil smartparens-mode-map)
-  (bind-key "s-{" 'sp-rewrap-sexp smartparens-mode-map)
+
   (bind-key "s-<delete>" 'sp-kill-sexp smartparens-mode-map)
   (bind-key "s-<backspace>" 'sp-backward-kill-sexp smartparens-mode-map))
 ```
@@ -318,6 +319,12 @@ and the following will restrict the smartparents navigation commands to just the
 (bind-key "s-<backspace>" (sp-restrict-c 'sp-backward-kill-sexp) scala-mode-map)
 (bind-key "s-<home>" (sp-restrict-c 'sp-beginning-of-sexp) scala-mode-map)
 (bind-key "s-<end>" (sp-restrict-c 'sp-end-of-sexp) scala-mode-map)
+```
+
+Ever wanted to change a `(_.thing)` to a `{ foo => foo.thing }` and back? This helps...
+
+```elisp
+(bind-key "s-{" 'sp-rewrap-sexp smartparens-mode-map)
 ```
 
 ### Expand region
