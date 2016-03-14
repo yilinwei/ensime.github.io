@@ -4,7 +4,7 @@ order: 2
 title: scalac from ENSIME
 ---
 
-ENSIME does not compile sources to `.class` files: `ant` (or the experimental `sbt` build) is still required to produce output. (A volunteer is required to add support for the experimental sbt build](https://github.com/ensime/ensime-sbt/issues/180)).
+ENSIME does not compile sources to `.class` files: `ant` (or the experimental `sbt` build) is still required to produce output. (A volunteer is required to add support for the [experimental sbt build](https://github.com/ensime/ensime-sbt/issues/180)).
 
 Included here is a sample `.ensime` file which can be used as the basis of a configuration for working on scala itself, and a reminder of some workflow aspects that must be kept in mind. In particular the use of the custom `:source-mode` feature.
 
