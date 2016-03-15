@@ -1,6 +1,6 @@
 ---
 layout: section
-order: 3
+order: 7
 title: VS Code
 ---
 

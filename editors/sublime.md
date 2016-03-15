@@ -1,6 +1,6 @@
 ---
 layout: section
-order: 7
+order: 9
 title: Sublime
 ---
 
