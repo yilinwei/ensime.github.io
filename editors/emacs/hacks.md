@@ -200,8 +200,6 @@ and create a template for scala files by creating `~/.emacs.d/templates/50:.*sca
 $0
 ```
 
-This is a similar one for Emacs Lisp: [`50:.*el`](https://github.com/fommil/dotfiles/blob/master/.emacs.d/templates/50:.*el).
-
 ### Smart Parentheses
 
 Once you realise that you can edit code on the level of code blocks, you'll wonder how you ever survived without it. Give [smartparens](https://github.com/Fuco1/smartparens) a try with some recommended keybindings. It's another package deserving of reading the full manual.
@@ -354,9 +352,9 @@ Some people find it useful to add the following function to their `scala-mode-ho
 (scala-mode:goto-start-of-code)
 ```
 
-### All together now
+### Example
 
-Don't forget to add all these wonderful packages to your scala mode! Here's a fully worked example with a further hack to use `TAGS` completions in `company-mode` only for small(ish) projects, which might give you your own ideas.
+Don't forget to add all these wonderful packages to your scala mode! Here's a fully worked example with a custom `company-mode` setup that works without an ENSIME server, which might give you some ideas.
 
 ```elisp
 (add-hook 'scala-mode-hook
@@ -368,14 +366,10 @@ Don't forget to add all these wonderful packages to your scala mode! Here's a fu
             (company-mode)
             (ensime-mode)
 
-            ;; for small projects, use TAGS for completions
             (make-local-variable 'company-backends)
             (projectile-visit-project-tags-table)
             (setq company-backends
-             (if (and tags-file-name
-                      (<= 20000000 (buffer-size (get-file-buffer tags-file-name))))
-                 '(ensime-company (company-keywords company-dabbrev-code company-yasnippet))
-               '(ensime-company (company-keywords company-dabbrev-code company-etags company-yasnippet))))
+               '(ensime-company (company-keywords company-dabbrev-code company-etags company-yasnippet)))
 
             (scala-mode:goto-start-of-code)))
 ```
@@ -394,4 +388,125 @@ TODO
 
 These are Emacs hacks that improve productivity in Emacs Lisp, e.g. when [contributing to `ensime-emacs`](/editors/emacs/contributing).
 
-TODO
+### Smart Parentheses
+
+We set up `smartparens` above, but when it's enabled in `strict` mode for lisps it really comes into its own. As a refresher, don't forget about `C-(` and note that thanks to [universal arguments](https://www.gnu.org/software/emacs/manual/html_node/emacs/Arguments.html) you can prefix a number which will wrap multiple s-expressions. e.g. `C-2 C-(` on `a b c` will turn it into `(a b) c`.
+
+It's well worth studying `sp-smartparens-bindings` with `C-h v` to see what else is enabled. `M-<delete>` is also incredibly useful.
+
+### Multi-line comments
+
+We set up `RET` to support multi-line comments for Scala above. This is the case in most major modes, but usually it's supported out of the box like with `emacs-lisp-mode`.
+
+```elisp
+(bind-key "RET" 'comment-indent-new-line emacs-lisp-mode-map)
+```
+
+### Documentation
+
+`eldoc` will print documentation into the minibuffer of whatever is at point.
+
+```elisp
+(use-package eldoc
+  :ensure nil
+  :diminish eldoc-mode
+  :commands eldoc-mode)
+```
+
+### Regular Expressions
+
+These packages are really useful for editing [Emacs regular expressions](https://www.emacswiki.org/emacs-test/RegularExpression), which predate the perl and Java regex engines that you may be used to:
+
+```elisp
+(use-package re-builder
+  :ensure nil
+  ;; C-c C-u errors, C-c C-w copy, C-c C-q exit
+  :init (bind-key "C-c r" 're-builder emacs-lisp-mode-map))
+
+(use-package pcre2el
+  :commands rxt-toggle-elisp-rx
+  :init (bind-key "C-c / t" 'rxt-toggle-elisp-rx emacs-lisp-mode-map))
+```
+
+### Snippets
+
+Don't forget about YAS. Lisp development goes well with templates as there are so many regular forms. For some ideas, look at [Sam's `emacs-lisp` snippets](https://github.com/fommil/dotfiles/tree/master/.emacs.d/snippets/emacs-lisp-mode).
+
+### Templates
+
+This is a sensible yatemplate for Emacs Lisp to go in `~/.emacs.d/templates/50:.*el`
+
+```elisp
+;;; `(buffer-name)` --- ${1:Summary} -*- lexical-binding: t -*-
+
+;; Copyright (C) `(format-time-string "%Y")` `yatemplate-owner`
+;; License: `yatemplate-license`
+
+;;; Commentary:
+;;
+;;  $2
+;;
+;;; Code:
+
+$0
+
+(provide '`(buffer-name)`)
+
+;;; `(buffer-name)` ends here
+```
+
+### IRC / gitter
+
+Want to ask `#emacs` or `ensime-emacs` questions from Emacs? You can do that. Follow the instructions at [irc.gitter.im](https://irc.gitter.im/) and set up `erc`
+
+```elisp
+(use-package erc
+  :commands erc erc-tls
+  :init
+  (setq
+   erc-prompt-for-password nil ;; prefer ~/.authinfo for passwords
+   erc-hide-list '("JOIN" "PART" "QUIT")
+   erc-autojoin-channels-alist
+   '(("irc.freenode.net" "#emacs")
+     ("irc.gitter.im" "#ensime/ensime-server" "#ensime/ensime-emacs"))))
+     
+(defun gitter()
+  "Connect to Gitter."
+  (interactive)
+  (erc-tls :server "irc.gitter.im" :port 6697))
+(defun freenode()
+  "Connect to Freenode."
+  (interactive)
+  (erc :server "irc.freenode.net" :port 6667))
+```
+
+### Flycheck
+
+Flycheck shows warnings and errors based a compiler running in the background and we can let it see our `ensime-emacs` project definition with transient dependencies by installing `flycheck-cask`
+
+```elisp
+(use-package flycheck-cask
+  :commands flycheck-cask-setup
+  :config (add-hook 'emacs-lisp-mode-hook (flycheck-cask-setup)))
+```
+
+### All Together
+
+Here's a fully worked example which pulls in a few more minor modes that you might like
+
+
+```elisp
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (setq show-trailing-whitespace t)
+            (show-paren-mode)
+            (focus-mode)
+            (rainbow-mode)
+            (prettify-symbols-mode)
+            (eldoc-mode)
+            (flycheck-mode)
+            (yas-minor-mode)
+            (company-mode)
+            (smartparens-strict-mode)
+            (rainbow-delimiters-mode)))
+```
