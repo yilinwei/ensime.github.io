@@ -5,12 +5,11 @@ title: Supported Text Editors
 site_nav_entry: true # this is an entry in the main site nav
 ---
 
-ENSIME supports several editors. Your choice of editor is a very personal thing and you should probably go with the one that feels right for you... *even if deep down you know that its not as good as Emacs*.
+ENSIME supports several editors. Your choice of editor is a very personal thing and you should probably go with the one that feels right for you... *even if deep down you know that it's not as good as Emacs*.
 
 If you really want to use a particular editor but some feature is missing, take it from us that you will find it incredibly rewarding to implement those features!
 
 The following chart describes how well ENSIME supports each editor:
-
 
 | Learn more → | [Emacs](emacs) | [Atom](atom) | [Vim](vim) | [VSC](vscode) | [Sublime](sublime) |
 |---------------------------------------|-------|------|-----|-----|---------|
@@ -29,3 +28,5 @@ The following chart describes how well ENSIME supports each editor:
 | Refactoring: organise imports         | ✔ | | | | |
 | Debugging                             | ✔ | | | | |
 | SBT Integration                       | ✔ | | | | |
+
+**TODO: status for Atom, Vim, VSCode, Sublime**
