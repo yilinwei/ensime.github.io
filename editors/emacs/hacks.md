@@ -230,7 +230,7 @@ Once you realise that you can edit code on the level of code blocks, you'll wond
   (bind-key "s-<backspace>" 'sp-backward-kill-sexp smartparens-mode-map))
 ```
 
-## Hungry / Contextual Backspace
+### Hungry / Contextual Backspace
 
 This is useful for deleting a bunch of stuff depending on the context.
 
