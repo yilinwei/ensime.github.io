@@ -26,7 +26,15 @@ The following chart describes how well ENSIME supports each editor:
 | Show documentation                    | ✔ | | | | |
 | Refactoring: rename symbol            | ✔ | | | | |
 | Refactoring: organise imports         | ✔ | | | | |
+| Formatting                            | ✔ | | | | |
 | Debugging                             | ✔ | | | | |
-| SBT Integration                       | ✔ | | | | |
+| Java Support: ENJIME                  | ✔ | | | | |
+| REPL                                  | ✔ | | | | |
+| SBT integration                       | ✔ | | | | |
+| [Find usages](https://github.com/ensime/ensime-server/issues/425) | | | | | |
+| [Show implementations](https://github.com/ensime/ensime-server/issues/1131) | | | | | |
+| [Advanced type search](https://github.com/ensime/ensime-server/issues/472) | | | | | |
+| [Passive suggestions](https://github.com/ensime/ensime-server/issues/848) | | | | | |
+| [Support for whitebox macros](https://github.com/fommil/imaginary-friend) | | | | | |
 
 **TODO: status for Atom, Vim, VSCode, Sublime**
