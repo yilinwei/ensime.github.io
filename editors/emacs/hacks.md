@@ -230,6 +230,29 @@ Once you realise that you can edit code on the level of code blocks, you'll wond
   (bind-key "s-<backspace>" 'sp-backward-kill-sexp smartparens-mode-map))
 ```
 
+## Hungry / Contextual Backspace
+
+This is useful for deleting a bunch of stuff depending on the context.
+
+```elisp
+(defun contextual-backspace ()
+  "Hungry whitespace or delete word depending on context."
+  (interactive)
+  (if (looking-back "[[:space:]\n]\\{2,\\}" (- (point) 2))
+      (while (looking-back "[[:space:]\n]" (- (point) 1))
+        (delete-char -1))
+    (cond
+     ((and (boundp 'smartparens-strict-mode)
+           smartparens-strict-mode)
+      (sp-backward-kill-word 1))
+     (subword-mode
+      (subword-backward-kill 1))
+     (t
+      (backward-kill-word 1)))))
+
+(global-set-key (kbd "C-<backspace>") 'contextual-backspace)
+```
+
 
 ## Scala
 
@@ -295,6 +318,14 @@ Redefine what `RET` means in `scala-mode` so that comment blocks automatically g
   (scala-indent:insert-asterisk-on-multiline-comment))
 
 (bind-key "RET" 'scala-mode-newline-comments scala-mode-map)
+```
+
+### Force dabbrev
+
+Sometimes I just want a quick, simple, buffer-only completion of what I'm typing, bypassing `company-mode` and the server. This provides it
+
+```elisp
+(bind-key "C-<tab>" 'dabbrev-expand scala-mode-map)
 ```
 
 ### Parenthesis Formatting
@@ -488,6 +519,20 @@ Flycheck shows warnings and errors based a compiler running in the background an
 (use-package flycheck-cask
   :commands flycheck-cask-setup
   :config (add-hook 'emacs-lisp-mode-hook (flycheck-cask-setup)))
+```
+
+### Formatting
+
+Not exactly formatting, but you can certainly re-indent an entire buffer with this handy function. We'd like to include this [in the CI](https://github.com/ensime/ensime-emacs/issues/325) of our Emacs packages.
+
+```elisp
+(defun indent-buffer ()
+  "Indent the entire buffer."
+  (interactive)
+  (save-excursion
+    (delete-trailing-whitespace)
+    (indent-region (point-min) (point-max) nil)
+    (untabify (point-min) (point-max))))
 ```
 
 ### All Together
