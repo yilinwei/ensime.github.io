@@ -320,6 +320,19 @@ Redefine what `RET` means in `scala-mode` so that comment blocks automatically g
 (bind-key "RET" 'scala-mode-newline-comments scala-mode-map)
 ```
 
+### Multi-line comments
+
+When you want quickly comment/uncomment block of code add this snippet to `scala-mode-hook`
+
+```elisp
+(setq comment-start "/* "
+	  comment-end " */"
+	  comment-style 'multi-line
+	  comment-empty-lines t)
+```
+
+Now you can use commands `comment-region` and `uncomment-region` to comment/uncomment region. When uncommenting it is enough to have point somewhere in commented region.
+
 ### Force dabbrev
 
 Sometimes I just want a quick, simple, buffer-only completion of what I'm typing, bypassing `company-mode` and the server. This provides it
@@ -432,17 +445,6 @@ We set up `RET` to support multi-line comments for Scala above. This is the case
 ```elisp
 (bind-key "RET" 'comment-indent-new-line emacs-lisp-mode-map)
 ```
-
-When you want quickly comment/uncomment block of code add this snippet to `scala-mode-hook`
-
-```elisp
-(setq comment-start "/* "
-	  comment-end " */"
-	  comment-style 'multi-line
-	  comment-empty-lines t)
-```
-
-Now you can use commands `comment-region` and `uncomment-region` to comment/uncomment region. When uncommenting it is enough to have point somewhere in commented region.
 
 ### Documentation
 
