@@ -38,4 +38,4 @@ The following chart describes how well ENSIME supports each editor:
 | [Passive suggestions](https://github.com/ensime/ensime-server/issues/848) | | | | | |
 | [Whitebox macros](https://github.com/fommil/imaginary-friend) | | | | | |
 
-**TODO: status for Vim, VSCode, Sublime**
+**TODO: status for Sublime**
