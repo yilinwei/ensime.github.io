@@ -21,11 +21,11 @@ The following chart describes how well ENSIME supports each editor:
 | Live errors / warnings                | ✔ | ✔ | ✔ | | ✔ |
 | Semantic highlighting                 | ✔ |   | | | |
 | Implicit conversions                  | ✔ | ✔ | ✔ | | |
-| Import class at point                 | ✔ |   | | | |
+| Import class at point                 | ✔ |   | | | ✔ |
 | Classpath search                      | ✔ | ✔ | ✔ | | |
 | Jump to source                        | ✔ | ✔ | ✔ | | ✔ |
 | Show documentation                    | ✔ | ✔ | ✔ | | ✔ |
-| Rename symbol                         | ✔ |   | ✔ | | |
+| Rename symbol                         | ✔ |   | ✔ | | ✔ |
 | Organise imports                      | ✔ | ✔ | ✔ | | ✔ |
 | Formatting                            | ✔ |   | ✔ | | |
 | Debugging                             | ✔ |   | ✔ | | ✔ |
