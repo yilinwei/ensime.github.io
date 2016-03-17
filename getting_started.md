@@ -11,8 +11,6 @@ ENSIME is a JVM process that indexes your dependencies and understands your sour
 
 It is important to realise that ENSIME is not an IDE, it is just one tool in a toolbox, following the UNIX philosophy of [Do One Thing and Do It Well](https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well).
 
-You need a build tool to compile your source code into binaries, and you need a text editor to be able to change your source code.
-
 1. The first step towards using ENSIME is to make sure that you are using a [build tool that is supported](/build_tools/) which will generate a `.ensime` file so that you can start the server.
 2. Then you'll need to install a [text editor that is supported](/editors/).
 
