@@ -80,7 +80,6 @@ a.section-sidebar-nav-item:focus {
 
 @media (min-width: 48em) {
   .section-content {
-    max-width: 38rem;
     margin-left: 30rem;
     margin-right: 2rem;
   }

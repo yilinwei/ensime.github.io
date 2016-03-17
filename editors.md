@@ -7,7 +7,7 @@ site_nav_entry: true # this is an entry in the main site nav
 
 ENSIME supports several editors. Your choice of editor is a very personal thing and you should probably go with the one that feels right for you... *even if deep down you know that it's not as good as Emacs*.
 
-If you really want to use a particular editor but some feature is missing, take it from us that you will find it incredibly rewarding to implement those features!
+If you really want to use a particular editor but some feature is missing, take it from us that you will find it incredibly rewarding to get it working! Head over to [Contributing](/contributing) to find out more.
 
 The following chart describes how well ENSIME supports each editor:
 
