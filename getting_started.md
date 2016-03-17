@@ -18,6 +18,6 @@ You need a build tool to compile your source code into binaries, and you need a 
 
 If things don't work as you expected, please read the [Getting Help](/getting_help) guide before asking for help from the community.
 
-We are all volunteers with our own priorities. Our approach to feature requests is "we are happy to help you implement it". The ENSIME code is surprisingly easy to understand, you are invited to [Contributing](/contributing) to find out more.
+We are all volunteers with our own priorities. Our approach to feature requests is "we will help you to implement it". Don't be scared, the ENSIME code is surprisingly easy to understand and you are invited to [Contributing](/contributing) to find out more.
 
 All interactions in ENSIME are governed by the [Typelevel Code of Conduct](http://typelevel.org/conduct.html).
