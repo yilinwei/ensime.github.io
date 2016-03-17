@@ -13,11 +13,11 @@ It is important to realise that ENSIME is not an IDE, it is just one tool in a t
 
 You need a build tool to compile your source code into binaries, and you need a text editor to be able to change your source code.
 
-1. The first step towards using ENSIME is to make sure that you are using a [build tool that is supported](/build_tools/). You'll install a plugin for your build tool which will create a `.ensime` file containing enough information about your project for ENSIME to be able to load it up. ENSIME works best if you compile your project regularly.
-2. Then you'll need to install a [text editor that is supported](/editors/). If you're coming from an IDE background you should spend some time learning about the different options.
+1. The first step towards using ENSIME is to make sure that you are using a [build tool that is supported](/build_tools/) which will generate a `.ensime` file so that you can start the server.
+2. Then you'll need to install a [text editor that is supported](/editors/).
 
 If things don't work as you expected, please read the [Getting Help](/getting_help) guide before asking for help from the community.
 
-We're all volunteers with our own priorities. The approach to your feature requests and bugs is very much "tell us what you want, and we'll help you to implement it". The ENSIME code is surprisingly easy to understand and modify. We hope you will enjoy the liberation of hacking your editor: come to [Contributing](/contributing) to find out more.
+We're all volunteers with our own priorities. The approach to your feature requests and bugs is "tell us what you want, and we'll be happy to help you to implement it". The ENSIME code is surprisingly easy to understand and modify: come to [Contributing](/contributing) to find out more about making it better.
 
 All interactions in ENSIME are governed by the [Typelevel Code of Conduct](http://typelevel.org/conduct.html).
