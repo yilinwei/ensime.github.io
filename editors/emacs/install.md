@@ -62,4 +62,4 @@ The first time you use ENSIME, you can expect to wait several minutes for the se
 
 On first use for a project, you will need to wait a few moments for indexing to complete.
 
-Once the server is available, enjoy editing with the ENSIME commands that are documented in the [User Guide](/editors/emacs/user_guide) and consider using some of the suggestions in our [Hacks](/editors/emacs/hacks) page to improve your productivity in Emacs when editing Scala code.
+Once the server is available, enjoy editing with the ENSIME commands that are documented in the [User Guide](/editors/emacs/userguide) and consider using some of the suggestions in our [Hacks](/editors/emacs/hacks) page to improve your productivity in Emacs when editing Scala code.
