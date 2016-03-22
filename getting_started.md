@@ -7,7 +7,7 @@ site_nav_entry: true # this is an entry in the main site nav
 
 Fantastic, and welcome!
 
-ENSIME has a JVM process that indexes your dependencies and understands your source code using the [scalac](http://www.scala-lang.org/files/archive/nightly/docs/compiler/index.html#scala.tools.nsc.interactive.package) the [javac](https://docs.oracle.com/javase/8/docs/jdk/api/javac/tree/) Abstract Syntax Trees - the same compiler that compiles your code.
+ENSIME has a JVM process that indexes your dependencies and understands your source code using the [scalac](http://www.scala-lang.org/files/archive/nightly/docs/compiler/index.html#scala.tools.nsc.interactive.package) and [javac](https://docs.oracle.com/javase/8/docs/jdk/api/javac/tree/) Abstract Syntax Trees - the same compiler that compiles your code.
 
 It is important to realise that ENSIME is not an IDE, it is just one tool in a toolbox, following the UNIX philosophy of [Do One Thing and Do It Well](https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well).
 
