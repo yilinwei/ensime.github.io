@@ -33,4 +33,4 @@ title: Installation
 1. Install [Syntastic](https://github.com/scrooloose/syntastic) for highlighting & syntax checking, and [Scala Vim](https://github.com/derekwyatt/vim-scala) for filetype identification. 
     - Detailed instructions on both plugins can be found in their respective documentation.
 1. After this, update your configuration and install them. With `vim-plug` this is done
-by executing `:PlugInstall` followed by `:UpdateRemotePlugins`. With `Vundle` run `:PluginInstall`.
+by executing `:PlugInstall`. With `Vundle` run `:PluginInstall`. Once you have installed the plugin you must run `:UpdateRemotePlugins`
