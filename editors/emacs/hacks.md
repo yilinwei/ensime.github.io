@@ -245,7 +245,8 @@ This is useful for deleting a bunch of stuff depending on the context.
      ((and (boundp 'smartparens-strict-mode)
            smartparens-strict-mode)
       (sp-backward-kill-word 1))
-     (subword-mode
+     ((and (boundp 'subword-mode) 
+           subword-mode)
       (subword-backward-kill 1))
      (t
       (backward-kill-word 1)))))
