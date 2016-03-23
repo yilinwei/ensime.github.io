@@ -7,7 +7,7 @@ site_nav_entry: true # this is an entry in the main site nav
 
 Fantastic, and welcome!
 
-ENSIME has a JVM process that indexes your dependencies and understands your source code using the [scalac](http://www.scala-lang.org/files/archive/nightly/docs/compiler/index.html#scala.tools.nsc.interactive.package) and [javac](https://docs.oracle.com/javase/8/docs/jdk/api/javac/tree/) Abstract Syntax Trees - the same compiler that compiles your code.
+ENSIME has a JVM process that indexes your dependencies and understands your source code using [scalac](http://www.scala-lang.org/files/archive/nightly/docs/compiler/index.html#scala.tools.nsc.interactive.package) and [javac](https://docs.oracle.com/javase/8/docs/jdk/api/javac/tree/) Abstract Syntax Trees.
 
 It is important to realise that ENSIME is not an IDE, it is just one tool in a toolbox, following the UNIX philosophy of [Do One Thing and Do It Well](https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well).
 
@@ -16,6 +16,6 @@ It is important to realise that ENSIME is not an IDE, it is just one tool in a t
 
 If things don't work as you expected, please read the [Getting Help](/getting_help) guide before asking for help from the community.
 
-We are all volunteers with our own priorities. Our approach to feature requests is "we will help you to implement it". Don't be scared, the ENSIME code is surprisingly easy to understand and you are invited to [Contributing](/contributing) to find out more. If you are coming from a corporate-sponsored IDE, this will be a liberating paradigm shift for you.
+We are all volunteers with our own priorities. Our approach to feature requests is "we will help you to implement or fix it". The ENSIME codebase is surprisingly easy to understand and you are invited to read our [Contributing Guide](/contributing). If you are coming from a corporate-sponsored IDE, it will be very liberating for you.
 
 All interactions in ENSIME are governed by the [Typelevel Code of Conduct](http://typelevel.org/conduct.html).
