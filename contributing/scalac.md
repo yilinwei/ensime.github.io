@@ -18,7 +18,7 @@ ENSIME uses the same version of the presentation compiler as is used by the proj
 
 When working on maintenance branches of scala, it should be as simple as using the last stable release of scala (on that branch) as the version number. In this mode, ENSIME will expect `.class` files to exist in the `build/quick` (produced by a quick build).
 
-However, when working on development branches it is unlikely that a version of ENSIME will be available: so use the most recent stable release. In this case, ENSIME will fail horribly when attempting to read the `.class` files (e.g. the pickle format may have changed), so delete all the `:target` and `:targets` settings and type `C-c C-c a` (`ensime-typecheck-all`) when starting your session to use "source only" mode. It may take several minutes for typechecking to complete, and there will be many false negative warnings. Warnings that are a result of new language features cannot be fixed. For what remains, open up the `interactive` module and fix some bugs in the presentation compiler :-P
+However, when working on development branches it is unlikely that a version of ENSIME will be available: so use the most recent stable release. In this case, ENSIME will fail horribly when attempting to read the `.class` files (e.g. the pickle format may have changed), so delete all the `:targets` settings and type `C-c C-c a` (`ensime-typecheck-all`) when starting your session to use "source only" mode. It may take several minutes for typechecking to complete, and there will be many false negative warnings. Warnings that are a result of new language features cannot be fixed. For what remains, open up the `interactive` module and fix some bugs in the presentation compiler :-P
 
 ## `.ensime`
 
@@ -40,17 +40,17 @@ However, when working on development branches it is unlikely that a version of E
                (:name "asm"
                       :depends-on-modules nil
                       :source-roots ("BASE/src/asm")
-                      :target "BASE/build/asm/classes")
+                      :targets ("BASE/build/asm/classes"))
                (:name "forkjoin"
                       :depends-on-modules nil
                       :source-roots ("BASE/src/forkjoin")
-                      :target "BASE/build/libs/classes/forkjoin")
+                      :targets ("BASE/build/libs/classes/forkjoin"))
                (:name "library"
                       :depends-on-modules ("asm" "forkjoin")
                       :source-roots ("BASE/src/library"
                                      "BASE/test/junit")
-                      :target "BASE/build/quick/classes/library"
-                      :test-target "BASE/build/junit/classes"
+                      :targets ("BASE/build/quick/classes/library")
+                      :test-targets ("BASE/build/junit/classes")
                       :compile-deps ("M2_REPO/junit/junit/4.10/junit-4.10.jar"
                                      "M2_REPO/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar")
                       :reference-source-roots ("M2_REPO/junit/junit/4.10/junit-4.10-sources.jar"
@@ -58,27 +58,27 @@ However, when working on development branches it is unlikely that a version of E
                (:name "reflect"
                       :depends-on-modules ("library")
                       :source-roots ("BASE/src/reflect")
-                      :target "BASE/build/quick/classes/reflect")
+                      :targets ("BASE/build/quick/classes/reflect"))
                (:name "compiler"
                       :depends-on-modules ("reflect")
                       :source-roots ("BASE/src/compiler")
-                      :target "BASE/build/classes"
+                      :targets ("BASE/build/classes")
                       :compile-deps ("M2_REPO/org/apache/ant/ant/1.8.4/ant-1.8.4.jar")
                       :reference-source-roots ("M2_REPO/org/apache/ant/ant/1.8.4/ant-1.8.4-sources.jar"))
                (:name "repl"
                       :depends-on-modules ("compiler")
                       :source-roots ("BASE/src/repl")
-                      :target "BASE/build/quick/classes/repl"
+                      :targets ("BASE/build/quick/classes/repl")
                       :compile-deps ("M2_REPO/jline/jline/2.12/jline-2.12.jar")
                       :reference-source-roots ("M2_REPO/jline/jline/2.12/jline-2.12-sources.jar"))
                (:name "scalap"
                       :depends-on-modules ("compiler")
                       :source-roots ("BASE/src/scalap")
-                      :target "BASE/build/scalap/classes")
+                      :targets ("BASE/build/scalap/classes"))
                (:name "actors"
                       :depends-on-modules ("library")
                       :source-roots ("BASE/src/actors")
-                      :target "BASE/build/actors/classes")
+                      :targets ("BASE/build/actors/classes"))
                (:name "partest"
                       :depends-on-modules ("repl")
                       :source-roots ("BASE/src/partest-extras"
@@ -94,7 +94,7 @@ However, when working on development branches it is unlikely that a version of E
                (:name "scaladoc"
                       :depends-on-modules ("partest")
                       :source-roots ("BASE/src/scaladoc")
-                      :target "BASE/build/scaladoc/classes"
+                      :targets ("BASE/build/scaladoc/classes")
                       :compile-deps ("M2_REPO/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2/scala-continuations-library_2.11-1.0.2.jar"
                                      "M2_REPO/org/scala-lang/plugins/scala-continuations-plugin_2.11.8/1.0.2/scala-continuations-plugin_2.11.8-1.0.2.jar"
                                      "M2_REPO/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.2/scala-parser-combinators_2.11-1.0.2.jar"
@@ -109,6 +109,6 @@ However, when working on development branches it is unlikely that a version of E
                (:name "interactive"
                       :depends-on-modules ("scaladoc")
                       :source-roots ("BASE/src/interactive")
-                      :target "BASE/build/interactive/classes")
+                      :targets ("BASE/build/interactive/classes"))
                ))
 ```
