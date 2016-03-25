@@ -8,8 +8,9 @@ Have you read all the documentation at [ensime.org/editors/emacs](http://ensime.
 
 Most problems can be resolved easily by following a simple process. Please do not skip these steps:
 
-1. fully compile your project
-2. use the latest release of `ensime` for Emacs (i.e. update `ensime` via MELPA).
+0. fully compile your project
+1. update `ensime` for Emacs.
+2. update your [build tool plugin](/build_tools).
 3. check the [tickets flagged as FAQ for Emacs](https://github.com/ensime/ensime-emacs/issues?labels=FAQ).
 4. check the [tickets flagged as FAQ on the server](https://github.com/ensime/ensime-server/issues?labels=FAQ).
 7. nuke old versions of the ENSIME server (and possibly SNAPSHOT deps)
