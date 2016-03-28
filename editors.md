@@ -28,7 +28,7 @@ The following chart describes how well ENSIME supports each editor:
 | Rename symbol                         | ✔ |   | ✔ | | ✔ |
 | Organise imports                      | ✔ | ✔ | ✔ | | ✔ |
 | Formatting                            | ✔ | ✔ | ✔ | | |
-| Debugging                             | ✔ |   | ✔ | | ✔ |
+| Debugging                             | ✔ |   |  | | ✔ |
 | Java Support: ENJIME                  | ✔ |   | | | |
 | REPL                                  | ✔ |   | | | |
 | SBT integration                       | ✔ |   | | | |
