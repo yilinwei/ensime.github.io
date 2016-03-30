@@ -6,8 +6,8 @@ title: Home
 
 ENSIME brings IDE features to your favourite text editor:
 
-- Show the `type` of the symbol under the cursor.
-- Contextual completion for `var`, `val` and `def`.
+- Show the type of the symbol under the cursor.
+- Contextual completion for values and methods.
 - Semantic highlighting with `implicit` expansion.
 - Add an import for the symbol under the cursor.
 - Fast classpath search (types and members).
