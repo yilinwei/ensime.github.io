@@ -14,7 +14,11 @@ The general architecture of ENSIME looks like this:
 
 which is explained in a recent [talk about ENSIME](/talks/scalasphere16/images/architecture.png) by @rorygraves and @fommil. All our code is hosted at [github.com/ensime](https://github.com/ensime/).
 
-The first thing to do is to decide what you want to contribute! If you are looking for a small task to pick up, have a look at our [waffle board](https://waffle.io/ensime/ensime-server). If that's too intimidating, restrict it to just the [1.0 Stable Milestone](https://waffle.io/ensime/ensime-server?milestone=Stable%201.0). Anything tagged as "Low Hanging Fruit" is suitable for a new contributor. Please contact us on the github issue directly if you want to contribute something. This helps us to avoid duplication of efforts, and also lets us discuss the best way to do it.
+The first thing to do is to decide what you want to contribute!
+
+If you are looking for a small task to pick up, have a look at our [waffle board](https://waffle.io/ensime/ensime-server). If that's too intimidating, restrict it to just the [1.0 Stable Milestone](https://waffle.io/ensime/ensime-server?milestone=Stable%201.0).
+
+Anything under the **Low Hanging Fruit** or **Needs Reproduction** columns are suitable for a new contributor. Please contact us on the github issue directly if you want to contribute something: this avoids duplication of efforts, and also lets us discuss the best way to do it.
 
 We have regular [Hack Days in London](http://hackthetower.co.uk/). If you can set aside the time to join us, they are a fun and exciting way to contribute to ENSIME.
 
