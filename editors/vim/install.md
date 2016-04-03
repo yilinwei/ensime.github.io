@@ -34,3 +34,17 @@ title: Installation
     - Detailed instructions on both plugins can be found in their respective documentation.
 1. After this, update your configuration and install them. With `vim-plug` this is done
 by executing `:PlugInstall`. With `Vundle` run `:PluginInstall`. Once you have installed the plugin you must run `:UpdateRemotePlugins`
+
+##### Post-Install Config
+
+Depending on your workflow, you may want to add some of the following to your `.vimrc`
+
+ - Typechecking after writing
+    ```
+    autocmd BufWritePost *.scala :EnTypeCheck
+    ```
+
+ - Easy Type Inspection
+    ```
+    nnoremap <localleader>t :EnTypeCheck<CR>
+    ```
