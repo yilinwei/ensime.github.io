@@ -34,7 +34,7 @@ Nuke old versions of the ENSIME server and try again
 - `rm -rf ~/.ivy2/local/org.ensime`
 
 
-## Checking Java and SBT Visiblity
+## Checking Java and SBT Visibility
 
 Unsure whether Sublime Text can see Java and SBT on your system application path? Try pasting the following commands one at a time into the Sublime Text console (*View menu / Show Console*).
 
@@ -64,7 +64,7 @@ In each case you should see a path string, something like this:
 b'/usr/bin/java\n'
 ~~~
 
-If you see and error message like this, Sublime Text can't see the relevant executable:
+If you see an error message like this, Sublime Text can't see the relevant executable:
 
 ~~~
 Traceback (most recent call last):
@@ -95,7 +95,7 @@ If your command palette doesn't contain the *Ensime: Startup* menu item, it is m
 
 - Ensure the top-most item in the Side Bar (*View Menu / Side Bar / Show Side Bar*) is your project directory (the one containing the `.ensime` file).
 
-  If not, choose *File Menu / Open...* and open the project directory directly.
+  If not, choose *Project Menu / Add Folder to Project...* and select the project root directory. You'll be able to continue working in the same file.
 
 ## Line Endings
 

@@ -30,7 +30,7 @@ Sublime Text and ENSIME Sublime should now be correctly configured. The next ste
 
 Once you have [a `.ensime` file][gen-ensime] for your project, start an ENSIME session from within Sublime Text as follows:
 
-1. Open the root folder of your project (the one containing the `.ensime` file) in Sublime Text.
+1. Open the root folder of your project (the one containing the `.ensime` file) in Sublime Text. If you are already viewing a project file in Sublime, you can open the root folder by selecting *Project Menu / Add Folder to Project...* and selecting the project root directory.
 
 2. Choose *"Ensime: Startup"* from the Sublime Text command palette (*Tools Menu / Command Palette...*).
 
