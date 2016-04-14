@@ -105,7 +105,30 @@ On Windows, the line endings is set to *Windows* by default. ENSIME Sublime requ
 
 Also check *View menu / Console* for log information.
 
+## Ensime and Multiple Cursors
 
+By default, Sublime Text 3 on OSX binds the `Command + Click` or `⌘-Click` action to setting a new cursor. Having started Ensime and attempted to follow a definition with `⌘-Click`, you may inadvertently create many new cursors instead. 
+
+You can rebind `⌘-Click` to `goto_definition` in Sublime, allowing Ensime's behavior to take precedence.
+
+Cancel any extra cursors by pressing `Esc`. Then, go to the location on your system where Sublime user preferences are defined. On OSX, this is `~/Library/Application Support/Sublime Text 3/Packages/User/`. If it does not already exist, create a file called `Default (OSX).sublime-mousemap`.
+
+Into the `Default (OSX).sublime-mousemap` file, paste the following setting:
+
+```
+[
+  {
+    "button": "button1",
+    "count": 1,
+    "modifiers": ["super"],
+    "press_command": "drag_select",
+    "command": "goto_definition"
+  }
+]
+```
+
+See [Stack Overflow][so-goto-definition] for additional tips. Instructions on Linux and Windows are similar, but you should use the proper `mousemap` filename for your system. The `super` modifier means `⌘` on OSX. On Windows, `super` is the "Windows" key. You can also experiment with `ctrl` and `alt`.
 
 [gitter]: https://gitter.im/ensime/ensime-sublime
 [issues]: https://github.com/ensime/ensime-sublime/issues
+[so-goto-definition]: http://stackoverflow.com/questions/16235706/sublime-3-set-key-map-for-function-goto-definition
