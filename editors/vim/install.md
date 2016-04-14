@@ -6,7 +6,7 @@ title: Installation
 
 1. Install Python's `websocket-client` so the plugin can communicate with ENSIME server.
     ```bash
-    $ sudo pip install websocket-client
+    $ sudo pip install websocket-client sexpdata
     ```
 1. Export `$BROWSER` if you want to launch documentation directly from Vim. Adding this line to your `.bashrc` for example:
     ```bash
