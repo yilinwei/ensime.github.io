@@ -11,7 +11,8 @@ First you'll need to for the repository, pull a local copy, add a symlink to you
 Steps:
 
 1. Fork the https://github.com/ensime/ensime-vim repo
-1. Pull locally
+1. Pull locally:
+
     ```
     $ git clone git@github.com:YOURUSER/ensime-vim
     $ git remote add upstream git@github.com:ensime/ensime-vim
@@ -20,12 +21,15 @@ Steps:
     - If you have already installed ENSIME-VIM you will need to clean your plugins to remove references to the master before installing your fork.
 
 ### Getting Help
-The best place for help is the Ensime-Vim gitter channel. If nobody there can help you, please open an issue on the repository!
+
+The best place for help is the Ensime-Vim Gitter channel. If nobody there can help you, please open an issue on the repository!
 
 ### Code Organization
+
 ENSIME-Vim is written in a combination of Python and VimL. The VimL code is really just for integrating with Vim & other plugins, while the Python code handles ENSIME functionality.
 
 ##### ENSIME integration
+
 - The majority of the interesting code lives in the `ensime_shared` integration. Here you'll find
     - `ensime.py`, which implements all of the request and response handling logic around ENSIME. This is the heart of the plugin.
     - `launcher.py`, which is responsible for starting up ENSIME, loading the config, and generating classpath files
@@ -48,9 +52,11 @@ ENSIME-Vim is written in a combination of Python and VimL. The VimL code is real
         - ENSIME-Vim has a number of Vim commands we execute, all of which can be found in the `commands` dictionary in `ensime_shared/ensime.py`. Adding a new command is as simple as adding a new pair to the dictionary. 
 
 ##### Regression Testing
-The tests are currently broken.
+
+The tests are currently broken. :-(
 
 ##### Useful Links
+
 - [Ensime Contributing]()
 - [Ensime API Source](https://github.com/ensime/ensime-server)
 - [VimScript The Hard Way](http://learnvimscriptthehardway.stevelosh.com/)

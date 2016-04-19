@@ -22,13 +22,28 @@ Most tickets can be resolved easily by following a simple process.
 
 #### Common Issues
 
+##### I get an error that "`ensime_plugin` is not defined", or there are no `:En*` commands in Vim
+
+If you're using NeoVim, try `:UpdateRemotePlugins`.
+
+If not, or that didn't fix the problem, ensure you installed the Python dependencies:
+
+```
+$ pip install websocket-client sexpdata
+```
+
+Also, confirm that [the version of Python your Vim is built with][vim python version] is the same one that you're running `pip install` with. Check `:py import sys; print(sys.path)` and `pip show sexpdata | grep Location`.
+
 ##### Screen Flickers When Printing Compile Errors/ Warnings
+
 If you are using Syntastic, check the value of `syntastic_full_redraws`, as this determines Syntastic's redraw behavior on `SyntasticCheck`. If you are not using Syntastic and seeing flicker please open an issue.
 
 ##### Ensime Server Won't Start
+
 The server will fail to start if any of these files still exist in the `.ensime_cache` directory: `http`, `port`, `server.pid`. If you don't see ensime running but those files are present, delete them and you should be all set.
 
 ##### My files don't typecheck on write anymore
+
 We recently (Spring 2016) decided that typechecking on write wasn't a sane default. If you'd still like this behavior, just add the following line to your Scala autocommand group:
 
 ```
@@ -36,10 +51,14 @@ au BufWritePost *.scala :EnTypeCheck
 ```
 
 ##### The Plugin won't download Ensime
+
 The bootstrapping process can be slow for Ensime, but only needs to be done once per scala-version. To ensure we don't repeat any uncessary work we check for the presence of a classpath-file in `~/.config/ensime/<ScalaVersion>`, where `<ScalaVersion>` is pulled from the `.ensime` config in question. If the classpath file already exist then the ensime jars will not be downloaded. Remove the version directory in question if you want to re-pull the jars (after cleaning your ivy cache of org.ensime of course).
 
-If that solved your problem, great!
+If these solved your problem, great!
 
 If not, please join the conversation on the `gitter.im` room [ensime-vim](https://gitter.im/ensime/ensime-vim). You will benefit by pre-emptively following the steps outlined in the [bug report template](https://github.com/ensime/ensime-vim/blob/master/.github/ISSUE_TEMPLATE.MD).
 
 If you think you've found a bug you can file it at [https://github.com/ensime/ensime-vim/issues/new](https://github.com/ensime/ensime-vim/issues/new) (you'd don't need to ask on the channel, just go right ahead and create a ticket).
+
+
+[vim python version]: http://stackoverflow.com/questions/10864042/how-to-check-python-version-that-vim-was-compiled-with
