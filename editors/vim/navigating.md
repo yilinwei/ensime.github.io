@@ -11,9 +11,9 @@ The default command is `:EnDeclaration`. Since you'll likely be using this prett
 au FileType scala nnoremap <localleader>df :EnDeclaration<CR>
 ```
 
-If you want to open the declaration in a new split instead of the current buffer use `:EnDeclrationSplit` instead
+If you want to open the declaration in a new split instead of the current buffer use `:EnDeclarationSplit` instead
 
-### Open Documetation For Browsing
+### Open Documentation For Browsing
 
 `EnDocBrowse` evaluates the command at `$BROWSER` and passes in the value of `:EnDocUri`(which is the url to the documentation under the cursor)
 
