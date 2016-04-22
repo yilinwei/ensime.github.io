@@ -8,8 +8,7 @@ title: Installation
 
 Before you start make sure you have:
 
-- [sbt] installed;
-- generated a _.ensime_ for your project running the [gen-ensime] command from sbt; and
+- generated a _.ensime_ for your project using one of the [supported build tools](http://ensime.github.io/build_tools/); and
 - [Atom] installed.
 
 ## Installing Atom ENSIME
