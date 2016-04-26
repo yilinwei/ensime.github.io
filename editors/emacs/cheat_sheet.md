@@ -43,6 +43,7 @@ To customise your ENSIME Emacs experience, don't forget to read through the user
 
 | Shortcut    | Description |
 |-------------|-------------|
+| `C-c C-r a` | Add type annotation to current symbol |
 | `C-c C-r o` | Organize imports in the current file |
 | `C-c C-r t` | Import the type under the cursor |
 | `C-c C-r r` | Rename the symbol under the cursor |
