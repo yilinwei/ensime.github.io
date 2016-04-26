@@ -32,6 +32,7 @@ The following chart describes how well ENSIME supports each editor:
 | Java Support: ENJIME                  | ✔ |   | | | |
 | REPL                                  | ✔ |   | | | |
 | SBT integration                       | ✔ |   | | | |
+| Add type to symbol                    | ✔ |   | | | |
 | [Find usages](https://github.com/ensime/ensime-server/issues/425) | | | | | |
 | [Show implementations](https://github.com/ensime/ensime-server/issues/1131) | | | | | |
 | [Advanced type search](https://github.com/ensime/ensime-server/issues/472) | | | | | |

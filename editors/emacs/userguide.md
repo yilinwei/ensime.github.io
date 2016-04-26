@@ -100,6 +100,10 @@ ENSIME uses the Scalariform library to format Scala sources. Type `C-c C-v f` to
 
 Refactoring is provided by the [github.com/scala-ide/scala-refactoring](https://github.com/scala-ide/scala-refactoring) library.
 
+### Add type to symbol
+
+Place your cursor over the symbol you'd like to add the type and type `C-c C-r a`.
+
 ### Rename
 
 Place your cursor over the symbol you'd like to rename. Type `C-c C-r r` and follow the minibuffer instructions.
