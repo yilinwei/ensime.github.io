@@ -78,7 +78,7 @@ We use Java 6 in our CI because we are part of the [community builds](https://gi
 Before you start, run this SBT command on your `ensime-server` repository as the `.ensime` file is required to run the integration tests (even if you are not using ENSIME to hack on ENSIME).
 
 ```
-sbt gen-ensime
+sbt ensimeConfig
 ```
 
 Don't forget to compile the integration tests as well as the tests, e.g.

@@ -55,8 +55,6 @@ where `ensime-node` is my checked out git repo.
 
 ### Use server assembly jars
 
-**Requires `ensime-sbt` 0.3.0 or later.**
-
 If an `-assembly.jar` file exists in your `.atom/packages/Ensime` directory (for the expected binary version of scala and ENSIME) then it will always be used in preference to the `coursier` auto-update procedure.
 
 This is advantageous for developing on ENSIME and also to enable a simple install of the ENSIME server in restricted environments. SNAPSHOT assembly jars are provided at http://ensime.typelevel.org/ (with many thanks to typelevel for the use of their servers).

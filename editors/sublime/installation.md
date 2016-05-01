@@ -9,7 +9,7 @@ title: Installation
 Before you start make sure you have:
 
 - [installed SBT][sbt];
-- [generated a `.ensime` file][gen-ensime] for your project;
+- [generated a `.ensime` file][ensimeConfig] for your project;
 - [installed Sublime Text][sublime].
 
 ## Installing via Package Control
@@ -28,7 +28,7 @@ Sublime Text and ENSIME Sublime should now be correctly configured. The next ste
 
 ## Launching ENSIME
 
-Once you have [a `.ensime` file][gen-ensime] for your project, start an ENSIME session from within Sublime Text as follows:
+Once you have [a `.ensime` file][ensimeConfig] for your project, start an ENSIME session from within Sublime Text as follows:
 
 1. Open the root folder of your project (the one containing the `.ensime` file) in Sublime Text. If you are already viewing a project file in Sublime, you can open the root folder by selecting *Project Menu / Add Folder to Project...* and selecting the project root directory.
 
@@ -51,7 +51,7 @@ See the [troubleshooting page][troubleshooting] and [chat to us on Gitter][gitte
 
 
 [features]: ../features
-[gen-ensime]: /build_tools/sbt/
+[ensimeConfig]: /build_tools/sbt/
 [gitter]: https://gitter.im/ensime/ensime-sublime
 [sbt]: http://www.scala-sbt.org/download.html
 [sublime]: http://sublimetext.com

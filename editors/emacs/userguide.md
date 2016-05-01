@@ -169,7 +169,7 @@ With your cursor on a line of Scala source, type `C-c C-d b` to set a breakpoint
 
 ### Launching the Debugger
 
-Launch your application using your build tool with debugging enabled. e.g. via the [ensime-sbt debugging](http://ensime.github.io/build_tools/sbt/#debugging-example) support.
+Launch your application using your build tool with debugging enabled. e.g. via the [sbt-ensime debugging](http://ensime.github.io/build_tools/sbt/#debugging-example) support.
 
 Then attach ENSIME to the running process with `M-x ensime-db-attach`. The first breakpoint your program hits will be highlighted and centered in Emacs.
 

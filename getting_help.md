@@ -9,13 +9,13 @@ Half the problem is working out which component of ENSIME is misbehaving.
 
 Read the Troubleshooting Guide for the editor:
 
-- [ensime-emacs](/editors/emacs/troubleshooting/)
-- [ensime-atom](/editors/atom/troubleshooting/)
-- [ensime-vim](/editors/vim/troubleshooting/)
-- [ensime-sublime](/editors/sublime/troubleshooting/)
+- [Emacs](/editors/emacs/troubleshooting/)
+- [Atom](/editors/atom/troubleshooting/)
+- [Vim](/editors/vim/troubleshooting/)
+- [Sublime](/editors/sublime/troubleshooting/)
 
 and build tool plugin that you are using:
 
-- [ensime-sbt](/build_tools/sbt/#troubleshooting)
-- [ensime-maven](/build_tools/maven/#troubleshooting)
-- [ensime-gradle](/build_tools/gradle/#troubleshooting)
+- [sbt](/build_tools/sbt/#troubleshooting)
+- [maven](/build_tools/maven/#troubleshooting)
+- [gradle](/build_tools/gradle/#troubleshooting)

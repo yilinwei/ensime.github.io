@@ -68,7 +68,7 @@ This can be turned off via a setting if you for personal preference would like t
  None of which has many downloads though…
 
 [sbt]: http://www.scala-sbt.org/download.html
-[gen-ensime]: /build_tools/sbt/
+[ensimeConfig]: /build_tools/sbt/
 [language-scala]: https://atom.io/packages/language-scala
 [linter]: https://atom.io/packages/linter
 [hyperclick]: https://atom.io/packages/hyperclick

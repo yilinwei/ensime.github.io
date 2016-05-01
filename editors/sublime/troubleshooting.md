@@ -89,7 +89,7 @@ import subprocess; print(subprocess.check_output(['sbt', 'sbtVersion'], stderr=s
 
 If your command palette doesn't contain the *Ensime: Startup* menu item, it is most likely because ENSIME Sublime can't find your `.ensime` file:
 
-- Ensure you have created a `.ensime` file using the `gen-ensime` command.
+- Ensure you have created a `.ensime` file using the `ensimeConfig` command.
 
   If you have recently (re)generated your `.ensime` file, you may have to quit and restart Sublime Text to pick up the changes.
 

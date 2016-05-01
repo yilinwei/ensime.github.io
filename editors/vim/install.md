@@ -16,11 +16,7 @@ You will need a version of Vim built with Python plugin support. This is standar
    ```bash
    $ pip install neovim
    ```
-1. Install `ensime-sbt` as a global sbt plugin. This will automatically create the `.ensime` config file for a project.
-
-   ```
-    $ echo 'addSbtPlugin("org.ensime" % "ensime-sbt" % "0.3.3")' >> ~/.sbt/0.13/plugins/plugins.sbt
-   ```
+1. Install the ENSIME plugin for your [build tool](/build_tools)
 1. Add ensime-vim to your plugin manager of choice in your `.vimrc` (or `init.vim` for NeoVim):
 
     Plugin Manager                                    | Your .{n}vimrc

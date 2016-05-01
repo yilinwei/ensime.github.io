@@ -14,29 +14,32 @@ This [sbt](http://github.com/sbt/sbt) plugin generates a `.ensime` file and prov
 Add these lines to `~/.sbt/0.13/plugins/plugins.sbt` as opposed to `project/plugins.sbt` (the decision to use ENSIME is per-user, rather than per-project):
 
 ```scala
-addSbtPlugin("org.ensime" % "ensime-sbt" % "0.4.0")
+addSbtPlugin("org.ensime" % "sbt-ensime" % "0.5.0")
 ```
 
 **Check that again**, if you incorrectly used `~/.sbt/0.13/plugins.sbt` you'll get an sbt resolution error, it really has to be in the `plugins` folder.
+
+**One more check** we've undergone a few artefact name changes - make sure you copied the full line.
 
 Alternatively, copy the `EnsimePlugin.scala` into your `project` directory and make sure you have `scalariform` and `scalap` on your project definition's classpath. This approach works well in environments that do not have access to maven central.
 
 
 ## Commands
 
-* `gen-ensime` --- Generate a `.ensime` for the project (takes space-separated parameters to restrict to subprojects).
-* `gen-ensime-project` --- Generate a `project/.ensime` for the project definition.
+* `ensimeConfig` --- Generate a `.ensime` for the project (takes space-separated parameters to restrict to subprojects).
+* `ensimeConfigProject` --- Generate a `project/.ensime` for the project definition.
 * `debugging` --- Add debugging flags to all forked JVM processes.
-* `debugging-off` --- Remove debugging flags from all forked JVM processes.
+* `debuggingOff` --- Remove debugging flags from all forked JVM processes.
+* `my_project/compileOnly` --- Compile a single fully qualified `.scala` file using `my_project`'s classpath. Takes custom flags, e.g. `scalacOptions in (Test, EnsimeKeys.compileOnly) ++= Seq("-Xshow-phases")`
 
-Note that downloading and resolving the sources and javadocs can take some time on first use.
+Note that downloading and resolving the sources and javadocs can take some time on first use, so we recommend that you use [coursier](http://get-coursier.io).
 
 (Copied from [EnsimePlugin.scala](https://github.com/ensime/ensime-sbt/blob/master/src/main/scala/EnsimePlugin.scala#L59))
 
 
 ### Debugging Example
 
-If you do not `fork` your main methods and tests from `sbt` you may be able to attach a remote debugger to the entire session by starting like `sbt -jvm-debug 1337` (check the docs of your `sbt` script, we strongly recommend using [paulp's sbt-extras](https://github.com/paulp/sbt-extras)). However, the vast majority of projects enabled forking and that is when `ensime-sbt`'s `debugging` is useful. 
+If you do not `fork` your main methods and tests from `sbt` you may be able to attach a remote debugger to the entire session by starting like `sbt -jvm-debug 1337` (check the docs of your `sbt` script, we strongly recommend using [paulp's sbt-extras](https://github.com/paulp/sbt-extras)). However, the vast majority of projects enabled forking and that is when `sbt-ensime`'s `debugging` is useful. 
 
 This sample session shows how easy it is to remotely debug a forked test:
 
@@ -49,7 +52,7 @@ crossbuild ~/Projects/ensime-server sbt
 Listening for transport dt_socket at address: 5005
 ```
 
-at which point, the test will hang until you connect a remote debugger to port 5005. When you are finished debugging, cancel the test or let it run to completion, and then type `debugging-off`.
+at which point, the test will hang until you connect a remote debugger to port 5005. When you are finished debugging, cancel the test or let it run to completion, and then type `debuggingOff`.
 
 Note: If you'd like to debug using ensime-emacs, first set your breakpoints, then use ensime-db-attach to connect.
 
@@ -95,7 +98,7 @@ You can follow snapshot releases by using the following instead of the stable re
 resolvers += Resolver.sonatypeRepo("snapshots")
 
 // update to the latest development version, see project/EnsimeSbtBuild.scala
-addSbtPlugin("org.ensime" % "ensime-sbt" % "0.4.1-SNAPSHOT")
+addSbtPlugin("org.ensime" % "sbt-ensime" % "0.5.1-SNAPSHOT")
 ```
 
 
@@ -125,6 +128,6 @@ You can check what runs in the CI by investigating the `.drone.yml`, `appveyor.y
 
 When submitting a PR, we expect an accompanying test in the `sbt-test` folder. These use the [sbt scripted](http://eed3si9n.com/testing-sbt-plugins) plugin and you can start by copying one of the existing tests (use symbolic links instead of copying files).
 
-To try your build locally, use `sbt publishLocal` (which will also happen as part of running `sbt scripted`) and make your required `ensime-sbt` version match that of the snapshot you are building. Remember to nuke your `~/.ivy2/local` once the fix is merged and published upstream.
+To try your build locally, use `sbt publishLocal` (which will also happen as part of running `sbt scripted`) and make your required `sbt-ensime` version match that of the snapshot you are building. Remember to nuke your `~/.ivy2/local` once the fix is merged and published upstream.
 
-Feel free to ask questions on the github issue tracker or [gitter.im/ensime/ensime-server](https://gitter.im/ensime/ensime-server) (there is no dedicated chat room for `ensime-sbt`).
+Feel free to ask questions on the github issue tracker or [gitter.im/ensime/ensime-server](https://gitter.im/ensime/ensime-server) (there is no dedicated chat room for `sbt-ensime`).
