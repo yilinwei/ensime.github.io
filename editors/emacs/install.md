@@ -28,10 +28,18 @@ The recommended way to install ENSIME is via MELPA and registering a `scala-mode
 (add-hook 'scala-mode-hook 'ensime-mode)
 ```
 
-For the server installation to work, make sure `sbt` is in your `PATH` environment. On OSX, set `exec-path` within Emacs, e.g.:
+For the server installation to work, make sure `sbt` is in your `PATH` environment. 
+
+On OSX, set `exec-path` within Emacs, e.g.:
 
 ```elisp
 (setq exec-path (append exec-path '("/usr/local/bin")))
+```
+
+On Windows, you need to add an extra command line parameter to `sbt`:
+
+```elisp
+(setenv "SBT_OPTS" (concat (getenv "SBT_OPTS") " -Djline.terminal=jline.UnsupportedTerminal" ) ) 
 ```
 
 Basic Scala support is provided by [`scala-mode2`](/editors/emacs/scala-mode) which provides many features specific to Scala major mode editing and sbt support is provided by [`sbt-mode`](/editors/emacs/sbt-mode). Both modes can be used independently of ENSIME and your are encouraged to read their standalone documentation to understand the role that they play.
